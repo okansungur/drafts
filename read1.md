@@ -131,6 +131,17 @@ computing power and network bandwidth can be overcome using pooled resources pro
    Cloud-Based IoT Environment - Resource Management  
 </p>
 
+#### Why Resource Allocation Is Important for IoT?
+
+Cloud resource allocation helps IoT networked devices to utilize these resources in an efficient and cost-effective way to improve system performance and productivity.
+IoT devices and resources are heterogeneous and globally distributed in nature, therefore, resource allocation and management are very important aspect of the IoT
+environment. The entity in the IoT network system can be an object, a human being or a place that is used to communicate between the IoT system application and
+the system user. These allocated objects are known as resources which can be categorized based on the information they communicate in the network.
+An effective Resource allocation supports standard Quality of Service (QoS), cost minimization, energy consumption reduction, increase resource utilization and moreover, it guaranteed the Service level agreement between the Cloud-based IoT system application providers and costumers where user’s requirements should be matched in an effective way.
+A lot of research work has been done by the industries and academic researchers, but many challenges and issues related to IoT resource allocation are up till now untouched.
+
+
+
 
 
 
