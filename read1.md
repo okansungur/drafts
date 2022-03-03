@@ -96,6 +96,10 @@ SmartThings, google cloud platform).
 ThingsBoard:- An open source platform for processing, collection, visualization and management of data produced by sensors communication involved in IoT
 ecosystem.
 
+<p align="center">
+  <img  src="https://github.com/okansungur/drafts/blob/main/iot_images/things_board.png"><br/>
+   ThingsBoard key system components and interfaces
+</p>
 
 
 
