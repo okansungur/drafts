@@ -126,7 +126,10 @@ for industries future-plans and policies. The huge amount of data gathered by th
 enough to compute this huge amount of data. The local systems are not capable enough to process these data for analytics. These limitations of huge storage space,
 computing power and network bandwidth can be overcome using pooled resources provide by Cloud Computing.
 
-
+<p align="center">
+  <img  src="https://github.com/okansungur/drafts/blob/main/iot_images/cloudresource.png"><br/>
+   Cloud-Based IoT Environment - Resource Management  
+</p>
 
 
 
