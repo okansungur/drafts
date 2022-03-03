@@ -101,6 +101,13 @@ ecosystem.
    ThingsBoard key system components and interfaces
 </p>
 
+This can be accurately said that cloud can accelerate the growth of IoT. However, deploying cloud technology also comes with certain challenges and shortcomings.
+Cloud computing and the IoT are the next-generation technologies. Cloud offer an effective solution for IoT like service management, implementing applications and
+services. It can benefit IoT by enabling it to deal with real world things in a more efficient and scalable manner. It can work as a middle layer between things and
+applications. Both technologies fills gap for each other like cloud provides IoT with unlimited storage capabilities and IoT extend the scope and application of cloud.
+The integration of these two technologies provides path for various business opportunities and innovative research areas as discussed in the chapter.
+
+
 
 
 
