@@ -112,6 +112,11 @@ The integration of these two technologies provides path for various business opp
 
 #### IOT Platform Requirements
 
+<p align="center">
+  <img  src="https://github.com/okansungur/drafts/blob/main/iot_images/iotrequire.png"><br/>
+   IOT requirements
+</p>
+For the Non functional requirements Cloud can be used. For data storing relational databases are used for structural,transactional data. No SQL databases are used for dynamically changing schema. Some of the popular choices of No SQL databases are Hadoop, CouchDB, HBases, and MangoDB
 
 
 
