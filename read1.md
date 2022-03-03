@@ -88,6 +88,15 @@ services and visualization, management, processing of enormous amount of vital d
    Cloud based IOT Applications
 </p>
 
+##### Cloud Platforms Available for IoT
+A number of IoT platform are available for sensor data management either free or open source (ThingSpeak, iCloud, Dropbox) or commercial (AWS, Azure, Kura,
+SmartThings, google cloud platform).
+
+#### Open Source IoT Platform
+ThingsBoard:- An open source platform for processing, collection, visualization and management of data produced by sensors communication involved in IoT
+ecosystem.
+
+
 
 
 
