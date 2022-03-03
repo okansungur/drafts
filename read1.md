@@ -3,6 +3,12 @@ We can represent IOT asa a mathematical representation.(Alhafidh and Allen 2016)
 
 IoT = Sensor + Network + Data + Services
 
+<p align="center">
+  <img  src="https://github.com/okansungur/drafts/blob/main/iot_images/iot1.png"><br/>
+  IOT
+</p>
+
+
 
 
 Internet is the actual backbone that has carved out the path for ubiquitous computing. It enables inter device communication across the globe. The two basic
