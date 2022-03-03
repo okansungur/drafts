@@ -80,7 +80,7 @@ _Solution provided by Cloud_: Cloud provides Real Time data analysis for impleme
    Cloud based IOT Architecture
 </p>
 
-For the efficient and flawless operation of smart cities, deployment of IoT and cloud computing is most important. It is impossible to offer above mentioned 
+For the efficient and flawless operation of smart cities, deployment of IoT and cloud computing is most important. It is impossible to offer below mentioned 
 services and visualization, management, processing of enormous amount of vital data that is useful for public or private organization without cloud.
 
 <p align="center">
