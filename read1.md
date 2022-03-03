@@ -72,13 +72,21 @@ _Solution provided by Cloud_: Cloud provides Real Time data analysis for impleme
 
 <p align="center">
   <img  src="https://github.com/okansungur/drafts/blob/main/iot_images/iot2.png"><br/>
-  Importance of Cloud Computing for IoT
+  Importance of Cloud Computing for IOT
 </p>
 
 <p align="center">
   <img  src="https://github.com/okansungur/drafts/blob/main/iot_images/iot3.png"><br/>
    Cloud based IOT Architecture
 </p>
+
+The smart city solutions should cover the notions like, Smart Lighting, Smart traffic management, Smart building, Smart parking, Wi-Fi Internet access & City Surveillance, Solid Waste Management, Smart Metering, Water Quality, water clogging management in cities, etc. It also aims at easing the urban life, protecting environment, encourage sustainable development (Alam 2012b).
+
+<p align="center">
+  <img  src="https://github.com/okansungur/drafts/blob/main/iot_images/iot4.png"><br/>
+   Cloud based IOT Applications
+</p>
+
 
 
 
