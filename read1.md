@@ -70,6 +70,15 @@ _Solution provided by Cloud_: Cloud provides virtual, low cost, unlimited, on de
 
 _Solution provided by Cloud_: Cloud provides Real Time data analysis for implementing scalable, real time, collaborative applications for managing complex events.
 
+<p align="center">
+  <img  src="https://github.com/okansungur/drafts/blob/main/iot_images/iot2.png"><br/>
+  Importance of Cloud Computing for IoT
+</p>
+
+<p align="center">
+  <img  src="https://github.com/okansungur/drafts/blob/main/iot_images/iot3.png"><br/>
+   Cloud based IOT Architecture
+</p>
 
 
 
