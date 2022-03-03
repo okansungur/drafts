@@ -110,4 +110,12 @@ The integration of these two technologies provides path for various business opp
 
 
 
+#### IOT Platform Requirements
+
+
+
+
+
+
+
 
