@@ -80,7 +80,8 @@ _Solution provided by Cloud_: Cloud provides Real Time data analysis for impleme
    Cloud based IOT Architecture
 </p>
 
-The smart city solutions should cover the notions like, Smart Lighting, Smart traffic management, Smart building, Smart parking, Wi-Fi Internet access & City Surveillance, Solid Waste Management, Smart Metering, Water Quality, water clogging management in cities, etc. It also aims at easing the urban life, protecting environment, encourage sustainable development (Alam 2012b).
+For the efficient and flawless operation of smart cities, deployment of IoT and cloud computing is most important. It is impossible to offer above mentioned 
+services and visualization, management, processing of enormous amount of vital data that is useful for public or private organization without cloud.
 
 <p align="center">
   <img  src="https://github.com/okansungur/drafts/blob/main/iot_images/iot4.png"><br/>
