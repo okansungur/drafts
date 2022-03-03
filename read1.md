@@ -118,6 +118,13 @@ The integration of these two technologies provides path for various business opp
 </p>
 For the Non functional requirements Cloud can be used. For data storing relational databases are used for structural,transactional data. No SQL databases are used for dynamically changing schema. Some of the popular choices of No SQL databases are Hadoop, CouchDB, HBases, and MongoDB
 
+#### How Cloud Computing Supports IoT Infrastructure?
+Computing has been intensively used by many real-life applications like smart cities, healthcare, agriculture industries, transportation, smart vehicles and many
+more (Malik and Om 2018). The current trends of technologies are moving towards the use of globally connected smart devices, which produces a huge amount of data
+that cannot be stored in locally due to limited storage capacity. The running fuel of all industries is the data, data is useless without its analytics to get useful information
+for industries future-plans and policies. The huge amount of data gathered by the smart connected devices needs powered computing systems that should capable
+enough to compute this huge amount of data. The local systems are not capable enough to process these data for analytics. These limitations of huge storage space,
+computing power and network bandwidth can be overcome using pooled resources provide by Cloud Computing.
 
 
 
