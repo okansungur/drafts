@@ -140,7 +140,11 @@ the system user. These allocated objects are known as resources which can be cat
 An effective Resource allocation supports standard Quality of Service (QoS), cost minimization, energy consumption reduction, increase resource utilization and moreover, it guaranteed the Service level agreement between the Cloud-based IoT system application providers and costumers where user’s requirements should be matched in an effective way.
 A lot of research work has been done by the industries and academic researchers, but many challenges and issues related to IoT resource allocation are up till now untouched.
 
-
+##### IOT Jamming Attacks
+A jamming attack is the transmission of radio signals that disrupt communications by decreasing the Signal-to-Inference-plus-Noise ratio (SINR) (Berg, 2008)
+As these devices are unsupervised the network is liable for different kinds of attacks. Reactive jammer attack is one such attack where the adversary
+introduces the attack on sensing any packets in the channel. In this scenario, the source will not be successfully transmitting all its packets to the desired
+destination.Path-based Dos attacks, single-channel jamming and multi-channel jamming attacks are some other attacks that should be considered.(Sampath et al. (2007),In Hamieh and Ben-Othman (2009),Deng et al. (2005).
 
 
 
