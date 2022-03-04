@@ -18,7 +18,7 @@ Cloud computing provides reliable service by providing virtual storage and compu
 a seamless connectivity between objects using RFID, which provides a unique code to each and every object.(Chemudupati et al. 2012)
 
 ##### Smart Object
-To categorize a smart object there are some characteristics.
+- Components of a smart object are:
 - Sensors
 - Actuators
 - Processing Unit
