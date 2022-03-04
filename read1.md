@@ -50,6 +50,7 @@ hosted on the internet. The employee can use cloud computing services because da
 
 ##### Cloud Computing
 Here are some common reasons organizations are turning to cloud computing services:
+
 1- Cost
 
 2- Performance
