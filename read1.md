@@ -25,7 +25,7 @@ Components of a smart object are:
 - Communication Unit
 - Power Source
 
-##### Features and Challenges of IoT
+##### Features of IoT
 - Heterogeneity
 - Scalability
 - Ubiquitous exchange of data
@@ -33,6 +33,11 @@ Components of a smart object are:
 - Capability of being tracked and localized
 - Capability of being self-organized
 - Security
+
+<p align="center">
+  <img  src="https://github.com/okansungur/drafts/blob/main/iot_images/features1.png"><br/>
+  IOT Features
+</p>
 
  IoT is all about sensors, actuator, networks and widely distributed smart devices with limited storage and processing capability with prevalent security and privacy issue.
  Due to the communication between interconnected devices, the enormous amount of data generated in IoT often referred as Big Data that brings heaps of strain on the internet infrastructure. This has made organization to look for a solution or alternative to reduce this load and introduce cloud computing to solve this problem by providing on demand and virtual services like unlimited storage and processing power. 
