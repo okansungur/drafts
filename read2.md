@@ -12,9 +12,29 @@ Geography is a discrete market, typically containing two or more regions, that p
   Geography
 </p>
 
+<p align="center">
+  <img  src="https://github.com/okansungur/drafts/blob/main/iot_images/regionazure.png"><br/>
+  Regions
+</p>
+
+
+Each  region features datacenters deployed within a latency-defined perimeter. They're connected through a dedicated regional low-latency network. This design ensures that  services within any region offer the best possible performance and security.
+
+
 
 Availability Zones is a high-availability offering that protects your applications and data from datacenter failures.
 Region pairs with another region within the same geography, together making a regional pair.  a Region Pair have direct connections that bring additional benefits to use them together.And a pair is always located greater than 300 miles apart 
+
+<p align="center">
+  <img  src="https://github.com/okansungur/drafts/blob/main/iot_images/region1.png"><br/>
+  Region Pairs
+</p>
+
+
+
+
+
+
 Availability Set is a logical grouping capability for isolating VM resources from each other when they’re deployed
 
 A refined more adequate definition would be “A Cloud Service is any system that provides on-demand availability of computer system resources, e.g; data storage and computing power, without direct active management by the user”. While this may seem a bit broad that is because it should be. Cloud services come in many forms and sizes even to the point where it may not be exactly clear to the average user, if their vendor or supplier should technically be classified as a cloud service provider or not.
