@@ -2,16 +2,16 @@
 
 A cloud service provider, or CSP, is a company that offers some component of cloud computing; typically when you search the internet a cloud service is defined as, infrastructure as a service (IaaS), software as a service (SaaS) or platform as a service (PaaS) to other businesses or individuals.  Microsoft Azure, AWS and Google Cloud, Oracle Cloud, IBM Cloud ... 
 
-A cloud data service is a remote version of a data center. It is more secure and less expensive than managing a data center. A region is a set of data centers deployed within a latency-defined perimeter and connected through a dedicated regional low-latency network. Azure is generally available in 52 regions around the world, with plans announced for 6 additional regions
-
-
+A cloud data service is a remote version of a data center. It is more secure and less expensive than managing a data center. A **region** is a set of data centers deployed within a latency-defined perimeter and connected through a dedicated regional low-latency network. Azure is generally available in 52 regions around the world, with plans announced for 6 additional regions
 
 
 <p align="center">
   <img  src="https://github.com/okansungur/drafts/blob/main/iot_images/geo.png"><br/>
   Geography
 </p>
+
 **Geography** is a discrete market, typically containing two or more regions, that preserves data residency and compliance boundaries.
+
 <p align="center">
   <img  src="https://github.com/okansungur/drafts/blob/main/iot_images/regionazure.png"><br/>
   Regions
@@ -22,7 +22,9 @@ Each  **region** features datacenters deployed within a latency-defined perimete
 
 
 **Availability Zones** is a high-availability offering that protects your applications and data from datacenter failures.
+
 **Region pairs** with another region within the same geography, together making a regional pair.  a Region Pair have direct connections that bring additional benefits to use them together. And a pair is always located greater than 300 miles apart 
+
 
 <p align="center">
   <img  src="https://github.com/okansungur/drafts/blob/main/iot_images/region1.png"><br/>
