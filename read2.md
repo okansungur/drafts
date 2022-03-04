@@ -54,6 +54,8 @@ An X company has built their own private cloud. They wanted to take advantage of
 
 However, what if due to some natural disaster or a fire accident they lose their datacenter? 
 They can’t afford to lose their data. They wanted a Disaster recovery solution, which would simply replicate all their data and services somewhere else. So, they outsourced services in a public cloud using AWS or GCP infrastructure so now they have the best of both worlds.
+
 *How do you define your supplier as a cloud service or not?*
+
 The basic concept behind the cloud is that the location of the service, and associated processes and assets such as the hardware and operating system(s) and/or applications on which it is running, are largely immaterial to the user. They may have a separate business unit that is a private cloud that is dedicated to serving the entire internal organization, they may use a 3rd party service like AWS, GCP or Azure and in some cases may use both. In any event they are servicing you from the cloud and you should expect that they have cloud specific controls like the CSA Cloud Control Matrix (CCM) to address the applicable scope of service and to mitigate the associated risks.
 
