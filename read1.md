@@ -18,7 +18,7 @@ Cloud computing provides reliable service by providing virtual storage and compu
 a seamless connectivity between objects using RFID, which provides a unique code to each and every object.(Chemudupati et al. 2012)
 
 ##### Smart Object
-- Components of a smart object are:
+Components of a smart object are:
 - Sensors
 - Actuators
 - Processing Unit
@@ -51,8 +51,11 @@ hosted on the internet. The employee can use cloud computing services because da
 ##### Cloud Computing
 Here are some common reasons organizations are turning to cloud computing services:
 1- Cost
+
 2- Performance
+
 3- Speed
+
 4- Security
 
 
