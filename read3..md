@@ -14,4 +14,13 @@ Modern encryption techniques can be classified as either **private key encryptio
 **public key encryption** (also called asymmetric key encryption). The technical field of study underlying encryption and secure communication is known as cryptography.
 
 
+###### Private Key Encryption
+In private key encryption, the sender and the receiver use the same key to encrypt the message and to decrypt the message
+You can imagine the private key as simply a sequence of random numbers. Because both parties use the same key, this is also called symmetric key encryption.
+
+The most popular private key encryption is Advanced Encryption Standard (AES). In AES, plain text is divided into 128-bit blocks. The
+secret key, which can be 128, 192, or 256 bits, is expanded into several round keys through a key expansion algorithm
+
+
+
 
