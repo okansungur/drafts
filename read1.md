@@ -162,7 +162,7 @@ A lot of research work has been done by the industries and academic researchers,
 
 ##### IoT Communication Protocols
 
-- MQTT
+- __MQTT__
 Message Queuing Telemetry Transport (MQTT), developed by IBM in 1999, is a publish-subscribe messaging protocol. At the heart of MQTT is the MQTT broker,
 which accepts and publishes the messages. Figure 7.4 shows how MQTT works. In this example, a topic called temperature is first created on the MQTT broker.
 Then the temperature sensor, the laptop, and the mobile device all subscribe to the topic. The temperature sensor will make a measurement from time to time
