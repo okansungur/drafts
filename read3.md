@@ -61,6 +61,7 @@ message is first cut into many small pieces of the same fixed length, and then a
 and one important feature is that when the long text message changes, the short message digest will also change. With hash functions and message digests we
 can introduce the concept of digital signatures and digital certificates.
 
+__Encryption is a two-way process__
 
 ###### Symmetric Encryption Algorithms:
 
@@ -78,12 +79,17 @@ can introduce the concept of digital signatures and digital certificates.
 - Pretty Good Privacy (PGP)
 
  ######  Hashing Algorithms:
+ 
+ __Hashing is a one-way process. We can only encrypt a value but can’t decrypt it,  used to store passwords, We Hash password and compare it__
 
 - Message Digest Algorithm (MD5)
 - Secure Hashing Algorithm (SHA-1, SHA-2, SHA-3)
 - WHIRLPOOL
 - TIGER
 - Cyclical Reduction Check (CRC32)
+
+
+Also __Salting__ is the process of adding additional data to the information before hashing it. It makes our data  more secure and difficult to hack.
 
 
 
