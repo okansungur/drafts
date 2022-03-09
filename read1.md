@@ -39,6 +39,11 @@ Components of a smart object are:
   IOT Features
 </p>
 
+Identification, the first requirement in IOT elements.Identity is usually used to identify a particular person, device, or entity. Moreover, it is considered a key factor in creating a connection or relationship between individuals and critical for IOT system success. It enables the object to communicate with other objects through the Internet in the same or different scope. Addressing the IOT objects is necessary to differentiate between object ID or name and its address, referring to the object address within a communication network. There are addressing methods for IOT objects like IPv4, IPv6, and 6LoWPAN addresses, as well as many former identification methods such as Radio Frequency Identification (RFID), Bluetooth, Barcode/2D code, Near Field Communication (NFC), Electronic product codes (EPC), IP address, etc. Identification methods give each object within the network a clear and unique identity 
+
+
+
+
  IoT is all about sensors, actuator, networks and widely distributed smart devices with limited storage and processing capability with prevalent security and privacy issue.
  Due to the communication between interconnected devices, the enormous amount of data generated in IoT often referred as Big Data that brings heaps of strain on the internet infrastructure. This has made organization to look for a solution or alternative to reduce this load and introduce cloud computing to solve this problem by providing on demand and virtual services like unlimited storage and processing power. 
 
