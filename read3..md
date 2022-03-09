@@ -54,5 +54,13 @@ algorithm involves three key steps: key generation, encryption, and decryption
 </p>
 
 
+A hash function is one that can turn a large, long text message into a short, fixed-length message, called a message digest.
+Hash
+functions and message digests are important and are widely used in cryptography. The simplest hash function is a checksum calculation, in which the long
+message is first cut into many small pieces of the same fixed length, and then all the pieces are added together. A hash function is a many-to-one function;
+and one important feature is that when the long text message changes, the short message digest will also change. With hash functions and message digests we
+can introduce the concept of digital signatures and digital certificates.
+
+
 
 Dr. Perry Xiao
