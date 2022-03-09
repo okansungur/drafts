@@ -25,7 +25,7 @@ secret key, which can be 128, 192, or 256 bits, is expanded into several round k
 
 <p align="center">
   <img  src="https://github.com/okansungur/drafts/blob/main/Misc/private.png"><br/>
-  Private Key
+   Private key encryption
 </p>
 
 
@@ -42,6 +42,13 @@ the message using X’s private key, and receiver Y will know it is indeed comin
 
 The most popular public key encryption is Rivest–Shamir–Adelman (RSA), designed by Ron Rivest, Adi Shamir, and Leonard Adelman in 1977. The RSA
 algorithm involves three key steps: key generation, encryption, and decryption
+
+
+
+<p align="center">
+  <img  src="https://github.com/okansungur/drafts/blob/main/Misc/public.png"><br/>
+  Public key encryption
+</p>
 
 
 
