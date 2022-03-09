@@ -21,6 +21,9 @@ You can imagine the private key as simply a sequence of random numbers. Because 
 The most popular private key encryption is Advanced Encryption Standard (AES). In AES, plain text is divided into 128-bit blocks. The
 secret key, which can be 128, 192, or 256 bits, is expanded into several round keys through a key expansion algorithm
 
+To date, AES is more secure and more widely used than any other algorithms, including Data Encryption Standard (DES), Triple DES, Twofish, and so on.
+The advantage of secret key encryption is that it is secure and can be used for large volumes of text. The disadvantage is that both the sender and the receiver
+need to use the same key, so key distribution is always an issue. 
 
 
 <p align="center">
