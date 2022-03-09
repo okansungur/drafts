@@ -63,4 +63,4 @@ can introduce the concept of digital signatures and digital certificates.
 
 
 
-Dr. Perry Xiao
+Practical Java Programming for IoT, AI, and Blockchain, Dr. Perry Xiao
