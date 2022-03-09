@@ -159,6 +159,52 @@ the system user. These allocated objects are known as resources which can be cat
 An effective Resource allocation supports standard Quality of Service (QoS), cost minimization, energy consumption reduction, increase resource utilization and moreover, it guaranteed the Service level agreement between the Cloud-based IoT system application providers and costumers where user’s requirements should be matched in an effective way.
 A lot of research work has been done by the industries and academic researchers, but many challenges and issues related to IoT resource allocation are up till now untouched.
 
+
+##### IoT Communication Protocols
+
+1- MQTT
+Message Queuing Telemetry Transport (MQTT), developed by IBM in 1999, is a publish-subscribe messaging protocol. At the heart of MQTT is the MQTT broker,
+which accepts and publishes the messages. Figure 7.4 shows how MQTT works. In this example, a topic called temperature is first created on the MQTT broker.
+Then the temperature sensor, the laptop, and the mobile device all subscribe to the topic. The temperature sensor will make a measurement from time to time
+and publish the data to the topic on the MQTT broker. The MQTT broker will then relay the data to the laptop, which is the mobile device. Compared with HTTP
+protocols, MQTT requires much less computing power, less bandwidth, and less power consumption.
+
+MQTT offers three levels of quality of service (QoS).
+
+0: At most once. The message is sent only once.
+1: At least once. The message is sent multiple times until acknowledgment is
+received.
+2: Exactly once. Only one copy of the message is sent (guaranteed by a twolevel handshake)
+
+2- CoAP
+Constrained Application Protocol (CoAP) is a specialized web transfer protocol for use with constrained IoT devices (with limited computing power and limited
+power consumption) and constrained IoT networks (with limited bandwidth). The protocol is designed for machine-to-machine (M2M) applications such as
+smart energy and building automation. CoAP is based on request and response messages, similar to HTTP, but instead of running on Transmission Control
+Protocol (TCP), it uses User Datagram Protocol (UDP). CoAP hence has much smaller headers and is much faster.
+
+
+3- XMPP
+Extensible Messaging and Presence Protocol (XMPP) is an open standard communication protocol based on the Extensible Markup Language (XML). XMPP
+enables real-time communication between IoT devices using structured, extensible messages. It provides a wide range of applications including instant messaging,
+presence, and collaboration.
+
+4- SOAP
+Simple Object Access Protocol (SOAP) is another XML-based messaging protocol, designed by Microsoft, for exchanging information among computers via
+the Internet. With XML messages, SOAP is highly extensible and can be used for web services.
+
+
+5- REST
+Representational State Transfer (REST) is a lightweight architectural style for web services. REST is based on Uniform Resource Identifier (URIs) and Hypertext
+Transfer Protocol (HTTP), and it uses JavaScript Object Notation (JSON) for a data format. REST is fully browser compatible. We will explore a REST example
+later in the chapter.
+
+
+
+
+
+
+
+
 ##### IOT Jamming Attacks
 A jamming attack is the transmission of radio signals that disrupt communications by decreasing the Signal-to-Inference-plus-Noise ratio (SINR) (Berg, 2008)
 As these devices are unsupervised the network is liable for different kinds of attacks. Reactive jammer attack is one such attack where the adversary
