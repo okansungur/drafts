@@ -62,5 +62,30 @@ and one important feature is that when the long text message changes, the short 
 can introduce the concept of digital signatures and digital certificates.
 
 
+###### Symmetric Encryption Algorithms:
+
+- Advanced Encryption Standard (AES)
+- Blowfish
+- Twofish
+- Rivest Cipher (RC4)
+Data Encryption Standard (DES)
+
+######  Asymmetric Encryption Algorithms:
+
+Elliptic Curve Digital Signature Algorithm (ECDSA)
+Rivest-Shamir-Adleman (RSA)
+Diffie-Hellman
+Pretty Good Privacy (PGP)
+
+ ######  Hashing Algorithms:
+
+Message Digest Algorithm (MD5)
+Secure Hashing Algorithm (SHA-1, SHA-2, SHA-3)
+WHIRLPOOL
+TIGER
+Cyclical Reduction Check (CRC32)
+
+
+
 
 Practical Java Programming for IoT, AI, and Blockchain, Dr. Perry Xiao
