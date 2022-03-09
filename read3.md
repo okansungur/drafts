@@ -68,22 +68,22 @@ can introduce the concept of digital signatures and digital certificates.
 - Blowfish
 - Twofish
 - Rivest Cipher (RC4)
-Data Encryption Standard (DES)
+- Data Encryption Standard (DES)
 
 ######  Asymmetric Encryption Algorithms:
 
-Elliptic Curve Digital Signature Algorithm (ECDSA)
-Rivest-Shamir-Adleman (RSA)
-Diffie-Hellman
-Pretty Good Privacy (PGP)
+- Elliptic Curve Digital Signature Algorithm (ECDSA)
+- Rivest-Shamir-Adleman (RSA)
+- Diffie-Hellman
+- Pretty Good Privacy (PGP)
 
  ######  Hashing Algorithms:
 
-Message Digest Algorithm (MD5)
-Secure Hashing Algorithm (SHA-1, SHA-2, SHA-3)
-WHIRLPOOL
-TIGER
-Cyclical Reduction Check (CRC32)
+- Message Digest Algorithm (MD5)
+- Secure Hashing Algorithm (SHA-1, SHA-2, SHA-3)
+- WHIRLPOOL
+- TIGER
+- Cyclical Reduction Check (CRC32)
 
 
 
