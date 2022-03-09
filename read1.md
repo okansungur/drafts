@@ -64,7 +64,9 @@ hosted on the internet. The employee can use cloud computing services because da
 </p>
 
 
-Identification, the first requirement in IOT elements.Identity is usually used to identify a particular person, device, or entity. Moreover, it is considered a key factor in creating a connection or relationship between individuals and critical for IOT system success. It enables the object to communicate with other objects through the Internet in the same or different scope. Addressing the IOT objects is necessary to differentiate between object ID or name and its address, referring to the object address within a communication network. There are addressing methods for IOT objects like IPv4, IPv6, and 6LoWPAN addresses, as well as many former identification methods such as Radio Frequency Identification (RFID), Bluetooth, Barcode/2D code, Near Field Communication (NFC), Electronic product codes (EPC), IP address, etc. Identification methods give each object within the network a clear and unique identity 
+Identification, the first requirement in IOT elements.Identity is usually used to identify a particular person, device, or entity. Moreover, it is considered a key factor in creating a connection or relationship between individuals and critical for IOT system success. It enables the object to communicate with other objects through the Internet in the same or different scope. Addressing the IOT objects is necessary to differentiate between object ID or name and its address, referring to the object address within a communication network. There are addressing methods for IOT objects like IPv4, IPv6, and 6LoWPAN addresses, as well as many former identification methods such as Radio Frequency Identification (RFID), Bluetooth, Barcode/2D code, Near Field Communication (NFC), Electronic product codes (EPC), IP address, etc. Identification methods give each object within the network a clear and unique identity.
+
+Semantics is considered as the brain of IOT. It is used to extract knowledge smartly from devices to take appropriate decisions in order to provide the desired services. It discovers and uses resources and modeling information.
 
 
 
