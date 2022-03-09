@@ -26,4 +26,11 @@ secret key, which can be 128, 192, or 256 bits, is expanded into several round k
 
 
 
+<p align="center">
+  <img  src="https://github.com/okansungur/drafts/blob/main/Misc/private.png"><br/>
+  Private Key
+</p>
+
+
+
 Dr. Perry Xiao
