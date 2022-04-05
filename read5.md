@@ -1,3 +1,9 @@
+### What is Externalizable Interface
+The default serialization process is very slow as it is fully recursive, so whenever we try to serialize one object,  the serialization process tries to serialize all the fields of our class (except static and transient variables). So, if we have a  class with lots of variables present and we do not want to serialize all of them, we have to make all of those variables as transient, all these fields will always be assigned with default values. This makes the entire process very slow.Externalizable interface is used when we want to implement custom logic to serialize/deserialize an object. Externalizable interface extends the Serializable interface,
+and it has two methods, writeExternal() and readExternal() which are used for serialization and de-serialization. This way, we can change the JVM’s default serialization behavior because while using Externalizable, we decide what to store in stream.
+
+
+
 ### What is final keyword and where it can be used? 
 
 - If you use final with a primitive type variable, then its value cannot be changed once assigned.
