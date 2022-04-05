@@ -128,3 +128,16 @@ How to create an Immutable class in java:
 1. While initializing the field in constructor, perform a deep copy
 2. While returning the object from its getter method, make sure to return a copy rather than the actual object reference
 
+### What is Singleton Design Pattern and how it can be implemented
+
+Singleton pattern is used in:
+- logging, caching, thread pool etc.
+- other design patterns like Builder, Prototype, Abstract Factory etc.
+- core java classes like java.lang.Runtime etc
+To implement a Singleton pattern, we have different approaches but all of them have the below common concepts:
+- private constructor to restrict instantiation of the class from other classes.
+- private static variable of the same class that is the only instance of the class.
+- public static method that returns the instance of the class, this is the global access point for outer world to get the instance of the singleton class.
+1. Lazy Initialization
+2. Eager Initialization
+3. Thread Safe Singleton implementation
