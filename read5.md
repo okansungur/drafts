@@ -71,6 +71,35 @@ Both StringBuffer and  StringBuilder classes are used for String  manipulation. 
 all its methods are synchronized, this makes performance of StringBuffer slower as compared to StringBuilder.If you are in a single-threaded environment or don’t care
 about thread safety, you should use StringBuilder. Otherwise, use StringBuffer for thread-safe operations. We  should use String class if we require immutability.
 
+### What is Constructor Chaining in java
+- this() : it is used to call the same class constructor
+- super() : it is used to call the parent class constructor
+
+### What is init block
+init block is called instance initializer block.init block runs each time when object of the class is created.
+
+Order of execution :
+
+- static blocks of super classes
+- static blocks of the class
+- init blocks of super classes
+- constructors of super classes
+- init blocks of the class
+- constructors of the class
+```
+public class myinit {
+    {
+        System.out.println("init block is executed");
+    }
+    public myinit(){
+        System.out.println("Constructor is called");
+    }
+    public static void main(String[] args) {
+        new myinit();
+    }
+}
+
+```
 
 
 
