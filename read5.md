@@ -27,6 +27,26 @@ public interface myinterface1 {
 
 
 public class demo implements myinterface1,myinterface2 {
-    
+//?????    
+}
+
+
+public class demo implements myinterface1,myinterface2 {
+    @Override
+    public void sayHello() {
+        myinterface1.super.sayHello();
+    }
+
+    public static void main(String[] args) {
+        new demo().sayHello();
+    }
 }
 ```
+
+
+
+
+
+
+
+
