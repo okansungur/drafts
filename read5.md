@@ -22,8 +22,8 @@ static methods as well)
 ### What is the need for   static and default methods in an Interface from Java 8 onwards
 - Consider there are 100 classes that are implementing one interface. Now you want to define one new method inside your interface. In this case you will have to change all the implementation classes to fulfill the interface contract. So, Java introduced default methods, here you can provide default implementation of that new method inside your interface.
 
-### Ambiguous situation also called Diamond Problem 
-
+### Why Java does not allow multiple inheritance? Describe Ambiguous situation also called Diamond Problem 
+Why Java does not allow this : let us consider there are 2 parent classes having a method named hello() with same  signature and one child class is extending these 2 classes, if you call this hello() method which is same in both parents, which parent class method will get executed – it results into an ambiguous situation with compile time error.
 ```
 public interface myinterface1 {
     default void sayHello() {
