@@ -1,10 +1,14 @@
 ### What is final keyword and where it can be used? 
 
-- If you use final with a primitive type variable, then its value cannot be changed once assigned.If you use final with a method, then you cannot override it in
-the subclass.
+- If you use final with a primitive type variable, then its value cannot be changed once assigned.
+- If you use final with a method, then you cannot override it in the subclass.
 - If you use final with class, then that class cannot be extended.
 - If you use final with an object type, then that object cannot be referenced again.
 
+### What are the different types of exceptions?
+- Checked Exceptions: All exceptions other than RuntimeException and Error are known as Checked exception. These exceptions are checked by the compiler
+at the compile time itself. E.g. when you are trying to read from a file, then compiler enforces us to handle the FileNotFoundException because it is possible that the file may not be present. Some other checked exceptions are SQLException , IOException etc
+- Unchecked Exceptions: Runtime Exceptions are known as Unchecked exceptions. Compiler does not force us to handle these exceptions but as a programmer, it is our responsibility to handle runtime exceptions e.g. NullPointerException , ArithmeticException , ArrayIndexOutOfBoundException etc
 
 
 ### Difference between abstract class and interface
