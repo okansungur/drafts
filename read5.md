@@ -111,3 +111,20 @@ public class myinit {
 ### What is Serialization and Deserialization
 Serialization is a mechanism to convert the state of an object into a byte stream while De-serialization is the reverse process where the byte stream is used to recreate the actual object in memory. The byte stream created is platform independent that means objects serialized on one platform can be deserialized on another platform. To make a Java Object serializable, the class must implement Serializable interface. Serializable is a Marker interface. ObjectOutputStream and ObjectInputStream  classes are used for Serialization and Deserialization in java
 
+### How to make a class Immutable
+String is an Immutable class in Java, i.e. once initialized its value never change. We can also make our own custom Immutable class, where the class object’s state will not change once it is initialized.
+
+Benefits of Immutable class:
+
+- Thread-safe: With immutable classes, we don’t have to worry about the thread-safety in case of multi-threaded environment as these classes are inherently thread-safe
+- Cacheable: An immutable class is good for Caching because while we don’t have to worry about the value changes
+
+How to create an Immutable class in java:
+- Declare the class as final so that it cannot be extended
+- Make all fields as private so that direct access to them is not allowed
+- Make all fields as final so that its value can be assigned only once
+- Don’t provide ‘setter’ methods for variables
+- When the class contains a mutable object reference, 
+1. While initializing the field in constructor, perform a deep copy
+2. While returning the object from its getter method, make sure to return a copy rather than the actual object reference
+
