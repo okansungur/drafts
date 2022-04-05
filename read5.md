@@ -1,4 +1,12 @@
-# 
+### What is final keyword and where it can be used? 
+
+- If you use final with a primitive type variable, then its value cannot be changed once assigned.If you use final with a method, then you cannot override it in
+the subclass.
+- If you use final with class, then that class cannot be extended.
+- If you use final with an object type, then that object cannot be referenced again.
+
+
+
 ### Difference between abstract class and interface
 Abstract class can have both abstract and concrete methods but interface can only have abstract methods (Java 8 onwards, it can have default and
 static methods as well)
