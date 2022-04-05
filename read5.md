@@ -69,7 +69,7 @@ the wrong values to other string variables having the same reference.
 ### Explain StringBuffer and StringBuilder 
 Both StringBuffer and  StringBuilder classes are used for String  manipulation. These are mutable objects. But StringBuffer provides thread-safety as
 all its methods are synchronized, this makes performance of StringBuffer slower as compared to StringBuilder.If you are in a single-threaded environment or don’t care
-about thread safety, you should use StringBuilder. Otherwise, use StringBuffer for thread-safe operations.
+about thread safety, you should use StringBuilder. Otherwise, use StringBuffer for thread-safe operations. We  should use String class if we require immutability.
 
 
 
