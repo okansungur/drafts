@@ -9,7 +9,7 @@ independent of each other
 - These applications are easier to deploy, as only one single jar/war needs to be deployed
 - Scaling is simple when the application size is small, we just have to deploy one more instance of our monolith and distribute the traffic using a load balancer
 - Network latency is very low/none because of one single codebase
-Monolithic architecture disadvantages:
+#### Monolithic architecture disadvantages:
 - Rolling out a new version means redeploying the entire application
 - Scaling a monolith application becomes difficult once the application size increases. It also becomes difficult to manage
 - The size of the monolith can slow down the application start-up and deployment time
