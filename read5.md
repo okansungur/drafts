@@ -2,7 +2,11 @@
 The default serialization process is very slow as it is fully recursive, so whenever we try to serialize one object,  the serialization process tries to serialize all the fields of our class (except static and transient variables). So, if we have a  class with lots of variables present and we do not want to serialize all of them, we have to make all of those variables as transient, all these fields will always be assigned with default values. This makes the entire process very slow.Externalizable interface is used when we want to implement custom logic to serialize/deserialize an object. Externalizable interface extends the Serializable interface,
 and it has two methods, writeExternal() and readExternal() which are used for serialization and de-serialization. This way, we can change the JVM’s default serialization behavior because while using Externalizable, we decide what to store in stream.
 
-
+- Using Externalizable interface, we can implement custom logic for serialization and deserialization of object
+- When using Externalizable, we have to explicitly mention what fields or variables we want to serialize
+- When using Externalizable, a public no-arg constructor is required
+- Using Externalizable, we can also serialize transient and static variables
+- readExternal() method must read the values in the same sequence and with the same types as were written by writeExternal() method
 
 ### What is final keyword and where it can be used? 
 
@@ -68,7 +72,7 @@ reference in the pool, thus saving a lot of heap space also. If String is not im
 the wrong values to other string variables having the same reference.
 2. Security : String parameters are used in network connections, database URL’s, username and passwords etc. Because String is immutable, these values can’t be changed. Otherwise any hacker could change the referenced values which will cause severe security issues in the application.
 3. Multi-threading : Since String is immutable, it is  safe for multithreading. A single String instance can be shared across different threads. This avoids the use of synchronization for thread safety. Strings are implicitly thread-safe. 
-4. 4. Caching : The hashcode of string is frequently used in Java. Since string is immutable, the hashcode will remain the same, so it can be cached without worrying about the changes. This makes it a great candidate for using it as a Key in Map.
+4. Caching : The hashcode of string is frequently used in Java. Since string is immutable, the hashcode will remain the same, so it can be cached without worrying about the changes. This makes it a great candidate for using it as a Key in Map.
 5. Class Loaders : Strings are used in Java ClassLoaders and since String is made immutable, it provides security that correct class is being loaded.
 
 
