@@ -227,3 +227,25 @@ To implement a Singleton pattern, we have different approaches but all of them h
 1. Lazy Initialization
 2. Eager Initialization
 3. Thread Safe Singleton implementation
+```
+public class mysingleton {
+
+    private mysingleton(){}
+    private static mysingleton instance;
+    public  static  mysingleton getInstance(){
+        if(instance==null){
+            synchronized(mysingleton.class){
+                if(instance==null) {
+                    instance = new mysingleton();
+                }
+            }
+        }
+    return instance;
+    }
+
+}
+```
+
+The reason of second if condition inside the synchronized block : suppose there are 2 threads and both called the getInstance() method at the same time, now
+they will both be inside the first if condition as instance is null at this time, and the first thread which acquires the lock will create the object and as soon as it exits the synchronized block, other thread which was waiting, will acquire the lock and it will also create another object thus breaking the singleton pattern. This is why it is called “double-checked locking”.
+
