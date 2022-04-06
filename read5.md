@@ -128,6 +128,18 @@ has to provide the complete serialization logic which is a little hard but resul
 - When a class implements Serializable interface, it gets tied with default serialization which can easily break if structure of the class changes like
 adding/removing any variable whereas using Externalizable, you can create your own binary format for your object
 
+### Explain Volatile keyword in java
+Volatile is a keyword in java, that can be applied only to variables. You cannot apply volatile keyword to classes and methods. Applying volatile to a shared
+variable that is accessed in a multithreaded environment ensures that threads will read this variable from the main memory instead of their own local cache.
+### Explain synchronized keyword
+Synchronized method/block can only have one thread executing inside it, all the other threads trying to enter into the synchronized method/block will get blocked until the thread inside finishes its execution
+### What is static synchronization
+The purpose of static synchronization is to make the static data thread-safe
+### What is Callable Interface  
+Callable interface represents an asynchronous task which can be executed by a separate thread, it has one call() method, which returns a Future object
+A Runnable can be executed by passing it into the Thread  class constructor but Thread class does not have a constructor that accepts a Callable, so Callable can be
+executed only by submit() method of ExecutorService Interface
+
 ### How to make a class Immutable
 String is an Immutable class in Java, i.e. once initialized its value never change. We can also make our own custom Immutable class, where the class object’s state will not change once it is initialized.
 
