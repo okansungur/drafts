@@ -283,5 +283,18 @@ annotation depending on your requirement, then you will have to use them separat
 ### What default embedded server is given in spring boot web starter and how we can change the default embedded server to the one of our choice
 The default embedded server is Tomcat, that comes with Spring boot web starter, if you want to change this, then use <exclusion> tag in web starter and add a
 separate dependency of the server that you want.    
-### asdasdasda
+### Difference between @Component, @Controller, @Service, @Repository annotations    
+@Component: it is a general purpose stereotype annotation which indicates that the class annotated with it, is a spring managed component.
+@Controller, @Service and @Repository are special types of @Component
+@Controller: the classes annotated with @Controller will act as Spring MVC controllers. DispatcherServlet looks for
+@RequestMapping in classes that are annotated with @Controller. That means you cannot replace @Controller
+with @Component, if you just replace it with @Component then yes it will be managed by Spring but it will not be able
+to handle the requests.
+
+@Service: the service layer classes that contain the business logic should be annotated with @Service. Apart from the fact that it is used to indicate that
+the class contains business logic, there is no special meaning to this annotation, however it is possible that Spring may add some additional feature to @Service in
+future, so it is always good idea to follow the convention.
+    
+@Repository: the classes annotated with this annotation defines data repositories. It is used in DAO layer classes. @Repository has one special feature that it catches platform specific exceptions and re-throw them as one of the Spring’s unified unchecked exception i.e. DataAccessException
+   
     
