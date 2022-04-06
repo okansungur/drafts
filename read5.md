@@ -261,3 +261,14 @@ public class mysingleton {
 The reason of second if condition inside the synchronized block : suppose there are 2 threads and both called the getInstance() method at the same time, now
 they will both be inside the first if condition as instance is null at this time, and the first thread which acquires the lock will create the object and as soon as it exits the synchronized block, other thread which was waiting, will acquire the lock and it will also create another object thus breaking the singleton pattern. This is why it is called “double-checked locking”.
 
+
+
+### What is Dependency Injection
+Inversion of Control (IoC) is a design principle used to invert different kinds of controls in object-oriented design to achieve loose coupling.
+
+Dependency Inversion Principle (DIP) says that high-level modules should not depend on low-level modules. Both should depend on the abstraction.
+
+Abstractions should not depend on details should depend on abstractions.
+
+Dependency Injection (DI) is a design pattern used to implement IoC.It allows the creation of dependent objects outside of a class and provides those objects to a class through different ways. Using DI, we move the creation and binding of the dependent objects outside of the class that depends on them
+
