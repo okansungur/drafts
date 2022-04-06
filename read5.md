@@ -115,6 +115,19 @@ public class myinit {
 ### What is Serialization and Deserialization
 Serialization is a mechanism to convert the state of an object into a byte stream while De-serialization is the reverse process where the byte stream is used to recreate the actual object in memory. The byte stream created is platform independent that means objects serialized on one platform can be deserialized on another platform. To make a Java Object serializable, the class must implement Serializable interface. Serializable is a Marker interface. ObjectOutputStream and ObjectInputStream  classes are used for Serialization and Deserialization in java
 
+
+### Difference between Serializable and Externalizable
+- Serializable is a marker interface which means it does not contain any method whereas Externalizable is a child interface of Serializable and it contains two
+methods writeExternal() and readExternal()
+- When using Serializable, JVM takes full responsibility for serializing the class object but in case of Externalizable, the programmer has full control over
+serialization logic
+- Serializable interface is a better fit when we want to serialize the entire object whereas Externalizable is better suited for custom serialization
+- Default serialization is easy to implement but it comes with some issues and performance cost whereas in case of Externalizable, the programmer
+has to provide the complete serialization logic which is a little hard but results in better performance
+- Default serialization does not call any constructor whereas a public no-arg constructor is needed when using Externalizable interface
+- When a class implements Serializable interface, it gets tied with default serialization which can easily break if structure of the class changes like
+adding/removing any variable whereas using Externalizable, you can create your own binary format for your object
+
 ### How to make a class Immutable
 String is an Immutable class in Java, i.e. once initialized its value never change. We can also make our own custom Immutable class, where the class object’s state will not change once it is initialized.
 
