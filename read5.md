@@ -272,3 +272,16 @@ Abstractions should not depend on details should depend on abstractions.
 
 Dependency Injection (DI) is a design pattern used to implement IoC.It allows the creation of dependent objects outside of a class and provides those objects to a class through different ways. Using DI, we move the creation and binding of the dependent objects outside of the class that depends on them
 
+### What is @SpringBootApplication Annotation
+
+@SpringBootApplication is a combination of 3 different annotations: @Configuration: This annotation marks a class as a Configuration class in Java-based
+configuration, it allows to register extra beans in the context or import additional configuration classes @ComponentScan: to enable component scanning
+@EnableAutoConfiguration: to enable Spring Boot’s autoconfiguration feature These 3 annotations are frequently used together, so SpringBoot designers bundled them into
+one single @SpringBootApplication, now instead of 3 annotations you just need to specify only one annotation on the Main class. However, if you don’t need one of these
+annotation depending on your requirement, then you will have to use them separately 
+
+### What default embedded server is given in spring boot web starter and how we can change the default embedded server to the one of our choice
+The default embedded server is Tomcat, that comes with Spring boot web starter, if you want to change this, then use <exclusion> tag in web starter and add a
+separate dependency of the server that you want.
+    
+    
