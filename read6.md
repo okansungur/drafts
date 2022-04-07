@@ -31,3 +31,7 @@ independent of each other
 - Deploying a micro-service application is also a complex task, as each service will have multiple instances and each instance will need to be configured, deployed,
 scaled and monitored
 - Breaking down a large application into individual components as micro-services is also a difficult task
+
+### Which annotation is used for  binding the incoming json request to the defined pojo class
+
+
