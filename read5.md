@@ -321,3 +321,10 @@ SpringBoot provides us with two interfaces, CommandLineRunner and ApplicationRun
 the application context is created and before SpringBoot application startup Both of these interfaces provide the same functionality and 
 the only difference between them is CommandLineRunner.run() method accepts String arr[], whereas ApplicationRunner.run() method accepts ApplicationArguments as argument
 	
+### What is Spring Data JPA
+Spring Data is part of Spring framework. It provides an abstraction to significantly reduce the amount of boilerplate code required to implement data access layers.
+It does this by providing Repositories. Repositories are just interfaces that do not have any implementation class and provide various database operations like save, delete etc. We have several repositories to choose from, CRUDRepository, JPARepository, PagingAndSortingRepository.
+If you are thinking how Spring Data JPA saves us from writing boilerplate code, then consider an example, you have an Employee class and you are writing its Dao
+interface and implementation class for performing some CRUD operations. You will also have other classes and similarly, you will write CRUD operations logic for these
+classes as well. So, there is a lot of boilerplate code here. Spring Data JPA takes care of this, and provides you with a Repository interface which have all the common DAO operations. We just have to extend these Repositories and Spring Data JPA will provide the DAO implementation at runtime.
+Spring Data JPA can also generate JPA queries on our behalf, we just have to follow certain method naming conventions and the database query will be automatically generated for us. For example, let’s say we have a table named Employee with id, name and age columns. If you want to write a query that will give the Employee object by name, then you can use Spring Data JPA, like: public EmployeeEntity  findByName(String name); 
