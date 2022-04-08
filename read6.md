@@ -32,6 +32,4 @@ independent of each other
 scaled and monitored
 - Breaking down a large application into individual components as micro-services is also a difficult task
 
-### Which annotation is used for  binding the incoming json request to the defined pojo class
-
 
