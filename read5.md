@@ -297,4 +297,13 @@ future, so it is always good idea to follow the convention.
     
 @Repository: the classes annotated with this annotation defines data repositories. It is used in DAO layer classes. @Repository has one special feature that it catches platform specific exceptions and re-throw them as one of the Spring’s unified unchecked exception i.e. DataAccessException
    
-    
+### Which annotation is used for  binding the incoming json request to the defined pojo class
+```
+	@RequestMapping(value="/save",method=RequestMethod.POST)
+	public String saveStudent(@RequestBody Student student) {
+		studentService.addNewStudent(student);
+		return "created student " + student.getStudentName();
+	}
+```
+Spring uses Jackson library (that comes with spring-boot-starter-web) to map the json request to the pojo class. MappingJackson2HttpMessageConverter is used
+when the incoming request is of content-type application/json    
