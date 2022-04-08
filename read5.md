@@ -316,5 +316,8 @@ method annotated with @Transactional is called, the request first comes to the p
 One thing to remember here is that the Spring wraps the bean in the proxy, the bean has no knowledge of it. So, only the external calls go through the proxy. As for the internal calls (@Transactional method calling the same bean method), they are called using ‘this’. Using @Transactional annotation, the transaction’s
 propagation and isolation can be set directly.
 	
-	
+### CommandLineRunner vs ApplicationRunner
+SpringBoot provides us with two interfaces, CommandLineRunner and ApplicationRunner. Both these runners have a run() method, which gets executed just after
+the application context is created and before SpringBoot application startup Both of these interfaces provide the same functionality and 
+the only difference between them is CommandLineRunner.run() method accepts String arr[], whereas ApplicationRunner.run() method accepts ApplicationArguments as argument
 	
