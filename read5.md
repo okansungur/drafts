@@ -307,3 +307,14 @@ future, so it is always good idea to follow the convention.
 ```
 Spring uses Jackson library (that comes with spring-boot-starter-web) to map the json request to the pojo class. MappingJackson2HttpMessageConverter is used
 when the incoming request is of content-type application/json    
+
+### What is @Transactional annotation
+
+Spring provides Declarative Transaction Management via @Transactional annotation. When a  method is applied with @Transactional, then it will execute
+inside a database transaction. @Transactional annotation can be applied at the class level also, in that case, all methods of that class will be executed inside a database transaction.When @Transactional annotation is detected by Spring, then it creates a proxy object around the actual bean object. So, whenever the
+method annotated with @Transactional is called, the request first comes to the proxy object and this proxy object invokes the same method on the target bean. These proxy objects can be supplied with interceptors. Spring creates a TransactionInterceptor and passes it to the generated proxy object. So, when the @Transactional annotated method is called, it gets called on the proxy object first, which in turn invokes the TransactionInterceptor that begins a transaction. Then the proxy object calls the actual method of the target bean. When the method finishes, the TransactionInterceptor commits/rollbacks the transaction.
+One thing to remember here is that the Spring wraps the bean in the proxy, the bean has no knowledge of it. So, only the external calls go through the proxy. As for the internal calls (@Transactional method calling the same bean method), they are called using ‘this’. Using @Transactional annotation, the transaction’s
+propagation and isolation can be set directly.
+	
+	
+	
