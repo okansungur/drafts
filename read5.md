@@ -366,6 +366,23 @@ You also need to use add/remove utility methods for bidirectional associations t
 ### Two types of fetch strategies in JPA are LAZY & Eager
 Don’t use FetchType.EAGER.Many-to-many associations only rarely represent parent-child associations, and you should better avoid cascading. That’s especially the case for CascadeType.REMOVE. Using it on both ends of a many-to-many association can bounce the cascade operation back and forth between the 2 tables until all records are removed.
 	
+### JPA LIST vs SET
+When we need a set and never care about order, we use a Set. When for some reason order is important (ordered list, ordering by date, etc.), then a List.
+For example, when we see a List, we know it comes sorted in some way, and that duplicates are either acceptable or irrelevant for this case. When we see a Set, we usually expect it to have no duplicates and no specific order (unless it's a SortedSet). When we see a Collection, we don't expect anything more from it than to contain some entities
+
 	
+What is EntityManager and what are its main functions you can list?
+EntityManager is an interface that describes an API for all basic operations on Enitity, data retrieval and other JPA entities. Essentially the main API for working with JPA. Basic operations:
+1) For operations on Entity: persist (adding Entity under JPA control), merge (updating), remove (delete), refresh (updating data), detach (removing from management JPA), lock (blocking Enity from changes in other thread),
+2) data Preparation: find (search and retrieval entity), createQuery, createNamedQuery, createNativeQuery , contains, createNamedStoredProcedureQuery, createStoredProcedureQuery
+3) Preparation of other entities JPA: getTransaction, getEntityManagerFactory, getCriteriaBuilder, getMetamodel, getDelegate
+4) Work with EntityGraph: createEntityGraph, getEntityGraph
+5) General operations on EntityManager or all Entities: close, isOpen, getProperties, setProperty, clear.
+#### An Entity object has four lifecycle status: new, managed, detached, or removed. Their description
+1) new – the object has been created but has not yet generated primary keys and has not yet been saved in the database,
+2) managed – the object has been created, managed by JPA, has generated primary keys,
+3) detached – the object has been created, but not managed (or no longer managed) JPA,
+4) removed – the object is created, managed by JPA, but will be deleted after commit’a transaction.
+
 	
 	
