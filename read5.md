@@ -333,6 +333,8 @@ Spring Data JPA can also generate JPA queries on our behalf, we just have to fol
  @ElementCollection is used when the existence of the child-entity is meaningless without the parent entity, when a parent entity is removed, your children will also be removed. Empolyee- Address
 It means that the collection is not a collection of entities, but a collection of simple types (Strings, etc.) or a collection of embeddable elements (class annotated with @Embeddable).
 @ElementCollection is mainly for mapping non-entities (embeddable or basic) while @OneToMany is used to map entities. So which one to use depend on what you want to achieve.
+But the mapping as an @ElementCollection has a downside For small amount of data it is OK
+I, therefore, recommend modeling an additional entity and a one-to-many association instead of an @ElementCollection This enables you to use lazy loading and to update these values independently of each other. Doing that requires only a minimum amount of code but provides much better performance.
 
 	
 ### Unidirectional & Bidirectional  associations 
@@ -361,6 +363,9 @@ One to Many or Many to Many  for big data it is not good to use bidirectional.
 You also need to use add/remove utility methods for bidirectional associations to make sure that both sides are properly synchronized.
 	
 
+### Two types of fetch strategies in JPA are LAZY & Eager
+Don’t use FetchType.EAGER.Many-to-many associations only rarely represent parent-child associations, and you should better avoid cascading. That’s especially the case for CascadeType.REMOVE. Using it on both ends of a many-to-many association can bounce the cascade operation back and forth between the 2 tables until all records are removed.
+	
 	
 	
 	
