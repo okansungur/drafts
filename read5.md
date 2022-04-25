@@ -341,17 +341,17 @@ I, therefore, recommend modeling an additional entity and a one-to-many associat
 Prefer bidirectional associations: Unidirectional associations are more difficult to query. In a large application, almost all associations must be navigable in both directions in queries.
 	
 ### Relations
-1-	**OneToOne** (one-to-one connection, that is, one Entity object can be associated with no more than one object of another Entity), 
+1- **OneToOne** (one-to-one connection, that is, one Entity object can be associated with no more than one object of another Entity), 
 Employee – Parking Lot
-2.	**OneToMany** (one-to-many connection, one Entity object can be associated with a whole collection of Entity)
+2- **OneToMany** (one-to-many connection, one Entity object can be associated with a whole collection of Entity)
 Department -employee
-3.	**ManyToOne** (many to one link, feedback for OneToMany),
+3- **ManyToOne** (many to one link, feedback for OneToMany),
 In a One-to-Many/Many-to-One relationship, the owning side is usually defined on the ‘many' side of the relationship. It's usually the side which owns the foreign key.
 Employee - Department
-4.	**ManyToMany** (many to many link) Each of which can be divided into two types:
+4- **ManyToMany** (many to many link) Each of which can be divided into two types:
 Employee - Project
-5.	Bidirectional
-6.	Unidirectional – a link to a link is set for all Entity, that is, in the case of OneToOne AB, Entity A has a link to Entity B, Entity B has a link to Entity A, Entity A is considered the owner of this link (this is important for cases of cascading data deletion , then deleting A will also delete B, but not vice versa). Undirectional- link to link is established only on one side, that is, in the case of OneToOne AB only Entity A will have link to Entity B, Entity B will not have link to A .
+5- Bidirectional
+6- Unidirectional – a link to a link is set for all Entity, that is, in the case of OneToOne AB, Entity A has a link to Entity B, Entity B has a link to Entity A, Entity A is considered the owner of this link (this is important for cases of cascading data deletion , then deleting A will also delete B, but not vice versa). Undirectional- link to link is established only on one side, that is, in the case of OneToOne AB only Entity A will have link to Entity B, Entity B will not have link to A .
 	
 - For @ManyToMany, the collection type makes quite a difference as Sets perform better than Lists.
 - For @OneToMany, unidirectional associations don't perform as well as bidirectional ones.
