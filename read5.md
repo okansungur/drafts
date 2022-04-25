@@ -433,11 +433,28 @@ In the JPA 2.1 specification, there are:
 5) Criteria Update / Delete – a mechanism for invoking bulk updates or deletes using the Criteria API,
 6) Unsynchronized persistence contexts – an opportunity to specify SynchronizationType,
 7) New features in JPQL / Criteria API : arithmetic subqueries, generic database functions, join ON clause, TREAT function,
-8) Dynamic creation of named queries (Details queries) Learn more about changing interfaces and APIs in JPA 2.1:
+8) Dynamic creation of named queries (Details queries) Learn more about changing interfaces and APIs in JPA 2.1
+	
 ### Hibernate  Merge and Update
+	
 there is a significant difference between the 2 methods. When you call the update method, Hibernate will only select the entity which you provided as a method parameter. But when you call JPA’s merge method, Hibernate will also select all associations with CascadeType.MERGE. You should, therefore, prefer JPA’s merge method if you reattach a huge graph of entities.
 Both the MERGE and UPDATE statements are designed to modify data in one table based on data from another, but MERGE can do much more.
 Whereas UPDATE can only modify column values you can use the MERGE statement to synchronize all data changes such as removal and addition of row.  The MERGE statement is structured to handle all three operations, INSERT, UPDATE, and DELETE, in one command.
+##### JPA Cascade Types
+The cascade types supported by the Java Persistence Architecture are as below:
+	
+CascadeType.PERSIST : cascade type presist means that save() or persist() operations cascade to related entities.
+	
+CascadeType.MERGE : cascade type merge means that related entities are merged when the owning entity is merged.
+	
+CascadeType.REFRESH : cascade type refresh does the same thing for the refresh() operation.
+	
+CascadeType.REMOVE : cascade type remove removes all related entities association with this setting when the owning entity is deleted.
+	
+CascadeType.DETACH : cascade type detach detaches all related entities if a “manual detach” occurs.
+	
+CascadeType.ALL : cascade type all is shorthand for all of the above cascade operations.
+	
 ```
 @Transactional
 	public Student saveStudent(Student student) {
