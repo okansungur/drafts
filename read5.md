@@ -262,6 +262,90 @@ The reason of second if condition inside the synchronized block : suppose there 
 they will both be inside the first if condition as instance is null at this time, and the first thread which acquires the lock will create the object and as soon as it exits the synchronized block, other thread which was waiting, will acquire the lock and it will also create another object thus breaking the singleton pattern. This is why it is called “double-checked locking”.
 
 
+### Decorator Pattern
+
+Decorator pattern allows a user to add new functionality to an existing object without altering its structure. This type of design pattern comes under structural pattern as this pattern acts as a wrapper to existing class.This pattern creates a decorator class which wraps the original class and provides additional functionality keeping class methods signature intact.
+
+```
+public interface Shape {
+    void draw();
+}
+
+public class Rectangle implements Shape {
+
+    // Overriding the method
+    @Override public void draw()
+    {
+        System.out.println("Shape: Rectangle");
+    }
+}
+
+
+public abstract class ShapeDecorator implements Shape {
+ 
+    protected Shape decoratedShape;
+ 
+    public ShapeDecorator(Shape decoratedShape)
+    {
+          this.decoratedShape = decoratedShape;
+    }
+ 
+
+
+    public void draw() {
+    decoratedShape.draw(); }
+}
+
+public class RedShapeDecorator extends ShapeDecorator {
+
+   public RedShapeDecorator(Shape decoratedShape) {
+      super(decoratedShape);		
+   }
+
+   @Override
+   public void draw() {
+      decoratedShape.draw();	       
+      setRedBorder(decoratedShape);
+   }
+
+   private void setRedBorder(Shape decoratedShape){
+      System.out.println("Border Color: Red");
+   }
+}
+
+public class DecoratorPatternDemo {
+   public static void main(String[] args) {
+
+      Shape circle = new Circle();
+
+      Shape redCircle = new RedShapeDecorator(new Circle());
+
+      Shape redRectangle = new RedShapeDecorator(new Rectangle());
+      System.out.println("Circle with normal border");
+      circle.draw();
+
+      System.out.println("\nCircle of red border");
+      redCircle.draw();
+
+      System.out.println("\nRectangle of red border");
+      redRectangle.draw();
+   }
+}
+
+
+Circle with normal border
+Shape: Circle
+
+Circle of red border
+Shape: Circle
+Border Color: Red
+
+Rectangle of red border
+Shape: Rectangle
+Border Color: Red
+```
+
+
 
 ### What is Dependency Injection
 Inversion of Control (IoC) is a design principle used to invert different kinds of controls in object-oriented design to achieve loose coupling.
