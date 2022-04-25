@@ -371,7 +371,7 @@ When we need a set and never care about order, we use a Set. When for some reaso
 For example, when we see a List, we know it comes sorted in some way, and that duplicates are either acceptable or irrelevant for this case. When we see a Set, we usually expect it to have no duplicates and no specific order (unless it's a SortedSet). When we see a Collection, we don't expect anything more from it than to contain some entities
 
 	
-What is EntityManager and what are its main functions you can list?
+### What is EntityManager and what are its main functions you can list?
 EntityManager is an interface that describes an API for all basic operations on Enitity, data retrieval and other JPA entities. Essentially the main API for working with JPA. Basic operations:
 1) For operations on Entity: persist (adding Entity under JPA control), merge (updating), remove (delete), refresh (updating data), detach (removing from management JPA), lock (blocking Enity from changes in other thread),
 2) data Preparation: find (search and retrieval entity), createQuery, createNamedQuery, createNativeQuery , contains, createNamedStoredProcedureQuery, createStoredProcedureQuery
@@ -385,4 +385,77 @@ EntityManager is an interface that describes an API for all basic operations on 
 4) removed – the object is created, managed by JPA, but will be deleted after commit’a transaction.
 
 	
+### The difference between @JoinColumn and mappedBy and how to use them in a one-to-many bidirectional relationship.
+The @JoinColumn annotation defines the actual physical mapping on the owning side. On the other hand, the referencing side is defined using the mappedBy attribute of the @OneToMany annotation.
+
+### What are callback methods in JPA for? To which entities do callback method annotations apply? List seven callback methods (or, equivalently, annotations of callback methods)
+Callback methods are used to call on certain Entity events (that is, add processing, for example, deletion of Entity methods by JPA), can be added to the entity class, to the mapped superclass, or to the callback listener class specified by the EntityListeners annotation (see previous question). There are seven callback methods (and annotations with the same names):
+1) PrePersist
+2) PostPersist
+3) PreRemove
+4) PostRemove
+5) PreUpdate
+6) PostUpdate
+7) PostLoad
 	
+### What are the six types of locks (lock) described in the JPA specification (or what values does the enum LockModeType in JPA have)?
+JPA has six types of locks, list them in order of increasing reliability (from the most unreliable and fast, to the most reliable and slow):
+1) NONE – without blocking
+2) OPTIMISTIC (or READ synonym for JPA 1) – optimistic blocking
+3) OPTIMISTIC_FORCE_INCREMENT (or WRITE synonym, remaining from JPA 1) – optimistic lock with forced increase of the version field,
+4) PESSIMISTIC_READ – pessimistic lock for reading,
+5) PESSIMISTIC_WRITE – pessimistic lock for write (and read),
+6) PESSIMISTICI-PII-IZIETIHI, IHIETI , I, I, I, I, I, I, I, I; on record (and th with forced increase in the field of versioning.
+	
+### What are the two types of cache (cache) you know in JPA and what are they for?
+JPA talks about two kinds of caches (cache):
+1) first-level cache (first-level cache) —caches data from a single transaction;
+2) second-level cache (second-level cache) —caches data for more than one transaction. The JPA provider can, but is not required to implement work with the second-level cache. This kind of cache can save access time and improve performance, but the downside is the ability to get outdated data.
+
+### How can you change the fetch strategy settings of any Entity attributes for individual queries (query) or search methods (find), then if Enity has an attribute with fetchType = LAZY, but for a specific query you need to make it EAGER or vice versa?
+For this, the EntityGraph API exists, it is used like this: using the NamedEntityGraph annotation for an Entity, it creates named EntityGraph objects that contain a list of attributes that need to change fetchType to EAGER, and then this name is specified in hits queries or the find method. As a result, the fetchType attribute of the Entity changes, but only for this request. There are two standard properties for specifying EntityGraph in hit:
+1) javax.persistence.fetchgraph – all attributes listed in EntityGraph change fetchType to EAGER, all others to LAZY
+2) javax.persistence.loadgraph – all attributes listed in EntityGraph change fetchType to EAGER, all others retain their fetchType (that is, if the attribute not specified in EntityGraph has fetchType was EAGER, then it will remain EAGER) With NamedSubgraph you can also change fetchType nested Entity objects.
+
+### What is JPQL (Java Persistence query language) and how is it different from SQL?
+JPQL (Java Persistence query language) is a query language, almost the same as SQL, but instead of the names and columns of database tables, it uses the names of the Entity classes and their attributes. The query parameters also use the data types of the attributes of the Entity, and not the database fields. Unlike SQL, JPQL has automatic polymorphism (see the next question). JPQL also uses functions that are not found in SQL: such as KEY (Map key), VALUE (Map value), TREAT (to cast a superclass to its heir object, downcasting), ENTRY, etc.
+
+### What are the main new features in the JPA 2.1 specification compared with JPA 2.0 (list at least five or six new features)?
+In the JPA 2.1 specification, there are:
+1) Entity Graphs – a dynamic change fetchType mechanism for each request,
+2) Converters – a mechanism for defining converters for specifying functions for converting Entity attributes into database fields,
+3) DDL generation – automatic generation of tables, indexes and schemas,
+4) Stored Procedures – a mechanism for calling stored procedures from JPA,
+5) Criteria Update / Delete – a mechanism for invoking bulk updates or deletes using the Criteria API,
+6) Unsynchronized persistence contexts – an opportunity to specify SynchronizationType,
+7) New features in JPQL / Criteria API : arithmetic subqueries, generic database functions, join ON clause, TREAT function,
+8) Dynamic creation of named queries (Details queries) Learn more about changing interfaces and APIs in JPA 2.1:
+### Hibernate  Merge and Update
+there is a significant difference between the 2 methods. When you call the update method, Hibernate will only select the entity which you provided as a method parameter. But when you call JPA’s merge method, Hibernate will also select all associations with CascadeType.MERGE. You should, therefore, prefer JPA’s merge method if you reattach a huge graph of entities.
+Both the MERGE and UPDATE statements are designed to modify data in one table based on data from another, but MERGE can do much more.
+Whereas UPDATE can only modify column values you can use the MERGE statement to synchronize all data changes such as removal and addition of row.  The MERGE statement is structured to handle all three operations, INSERT, UPDATE, and DELETE, in one command.
+```
+@Transactional
+	public Student saveStudent(Student student) {
+		entityManger.persist(student);
+		return student;
+	}
+
+	@Transactional
+	public Student updateStudent(Student student) {
+		entityManger.merge(student);
+		return student;
+	}
+
+```
+	
+### JPA vs Hibernate
+
+JPA	Hibernate
+JPA is described in javax.persistence package.	Hibernate is described in org.hibernate package.
+It describes the handling of relational data in Java applications.                                                                        	Hibernate is an Object-Relational Mapping (ORM) tool that is used to save the Java objects in the relational database system.
+It is not an implementation. It is only a Java specification.	Hibernate is an implementation of JPA. Hence, the common standard which is given by JPA is followed by Hibernate.
+It is a standard API that permits to perform database operations.	It is used in mapping Java data types with SQL data types and database tables.
+As an object-oriented query language, it uses Java Persistence Query Language (JPQL) to execute database operations.	As an object-oriented query language, it uses Hibernate Query Language (HQL) to execute database operations.
+To interconnect with the entity manager factory for the persistence unit, it uses EntityManagerFactory interface. Thus, it gives an entity manager.	To create Session instances, it uses SessionFactory interface.
+To make, read, and remove actions for instances of mapped entity classes, it uses EntityManager interface. This interface interconnects with the persistence condition.	To make, read, and remove actions for instances of mapped entity classes, it uses Session interface. It acts as a runtime interface between a Java application and Hibernate.
