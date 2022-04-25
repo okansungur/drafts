@@ -328,13 +328,20 @@ If you are thinking how Spring Data JPA saves us from writing boilerplate code, 
 interface and implementation class for performing some CRUD operations. You will also have other classes and similarly, you will write CRUD operations logic for these
 classes as well. So, there is a lot of boilerplate code here. Spring Data JPA takes care of this, and provides you with a Repository interface which have all the common DAO operations. We just have to extend these Repositories and Spring Data JPA will provide the DAO implementation at runtime.
 Spring Data JPA can also generate JPA queries on our behalf, we just have to follow certain method naming conventions and the database query will be automatically generated for us. For example, let’s say we have a table named Employee with id, name and age columns. If you want to write a query that will give the Employee object by name, then you can use Spring Data JPA, like: public EmployeeEntity  findByName(String name); 
+
+### JPA LIST vs SET
+When we need a set and never care about order, we use a Set. When for some reason order is important (ordered list, ordering by date, etc.), then a List.
+For example, when we see a List, we know it comes sorted in some way, and that duplicates are either acceptable or irrelevant for this case. When we see a Set, we usually expect it to have no duplicates and no specific order (unless it's a SortedSet). When we see a Collection, we don't expect anything more from it than to contain some entities
 	
 ### When to use @ ElementCollection (Collection Mapping)
  @ElementCollection is used when the existence of the child-entity is meaningless without the parent entity, when a parent entity is removed, your children will also be removed. Empolyee- Address
+	
 It means that the collection is not a collection of entities, but a collection of simple types (Strings, etc.) or a collection of embeddable elements (class annotated with @Embeddable).
+	
 @ElementCollection is mainly for mapping non-entities (embeddable or basic) while @OneToMany is used to map entities. So which one to use depend on what you want to achieve.
-But the mapping as an @ElementCollection has a downside For small amount of data it is OK
-I, therefore, recommend modeling an additional entity and a one-to-many association instead of an @ElementCollection This enables you to use lazy loading and to update these values independently of each other. Doing that requires only a minimum amount of code but provides much better performance.
+	
+But the mapping as an @ElementCollection has a downside For small amount of data it is OK , therefore, recommend modeling an additional entity and a one-to-many association instead of an @ElementCollection.
+This enables you to use lazy loading and to update these values independently of each other. Doing that requires only a minimum amount of code but provides much better performance.
 
 	
 ### Unidirectional & Bidirectional  associations 
@@ -365,9 +372,7 @@ You also need to use add/remove utility methods for bidirectional associations t
 ### Two types of fetch strategies in JPA are LAZY & Eager
 Don’t use FetchType.EAGER.Many-to-many associations only rarely represent parent-child associations, and you should better avoid cascading. That’s especially the case for CascadeType.REMOVE. Using it on both ends of a many-to-many association can bounce the cascade operation back and forth between the 2 tables until all records are removed.
 	
-### JPA LIST vs SET
-When we need a set and never care about order, we use a Set. When for some reason order is important (ordered list, ordering by date, etc.), then a List.
-For example, when we see a List, we know it comes sorted in some way, and that duplicates are either acceptable or irrelevant for this case. When we see a Set, we usually expect it to have no duplicates and no specific order (unless it's a SortedSet). When we see a Collection, we don't expect anything more from it than to contain some entities
+
 
 	
 ### What is EntityManager and what are its main functions you can list?
