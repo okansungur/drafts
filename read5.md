@@ -410,6 +410,9 @@ JPA has six types of locks, list them in order of increasing reliability (from t
 4) PESSIMISTIC_READ – pessimistic lock for reading,
 5) PESSIMISTIC_WRITE – pessimistic lock for write (and read),
 6) PESSIMISTICI-PII-IZIETIHI, IHIETI , I, I, I, I, I, I, I, I; on record (and th with forced increase in the field of versioning.
+
+	
+	
 	
 ### What are the two types of cache (cache) you know in JPA and what are they for?
 JPA talks about two kinds of caches (cache):
@@ -519,6 +522,17 @@ You can override also other column properties (not just changing names). Ex:leng
 - You cannot combine optimistic locking with the automatic retry. An optimistic locking assumes a manual intervention in order to decide whether to proceed with the update.
 - If you don’t care about the previous updates applied to the record, don’t implement any locking strategy.
 
+JPA provides us with two different optimistic lock modes (and two aliases):
+
+OPTIMISTIC – it obtains an optimistic read lock for all entities containing a version attribute
+	
+OPTIMISTIC_FORCE_INCREMENT – it obtains an optimistic lock the same as OPTIMISTIC and additionally increments the version attribute value
+	
+READ – it's a synonym for OPTIMISTIC
+	
+WRITE – it's a synonym for OPTIMISTIC_FORCE_INCREMENT
+	
+We can find all types listed above in the LockModeType class.
 
 ### JPA optimistic locking vs synchronized Java method
 Drawbacks of method synchronization:
