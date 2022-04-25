@@ -546,7 +546,7 @@ Think of synchronization as pessimistic locking: you have to reserve the lock be
 - Optimistic lock is only there to guarantee there is no inconsistent database state (prevents overwriting data unknowingly) but it does not guarantee you won't get an OptimisticLockException an fail to change the db row. For this reason optimistic lock has much better performance.
 - Pessimistic locking guarantees that you will never fail to write a row and you will know its most up to date values (as long as you synchronize everywhere where you use this entity)
 
-
+Optimistic locking uses version attributes included in entities to control concurrent modifications on them.
 	
 	
 	
