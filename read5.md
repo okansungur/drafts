@@ -450,12 +450,155 @@ Whereas UPDATE can only modify column values you can use the MERGE statement to 
 ```
 	
 ### JPA vs Hibernate
-
-JPA	Hibernate
-JPA is described in javax.persistence package.	Hibernate is described in org.hibernate package.
-It describes the handling of relational data in Java applications.                                                                        	Hibernate is an Object-Relational Mapping (ORM) tool that is used to save the Java objects in the relational database system.
-It is not an implementation. It is only a Java specification.	Hibernate is an implementation of JPA. Hence, the common standard which is given by JPA is followed by Hibernate.
+The major difference between Hibernate and JPA is that Hibernate is a framework while JPA is API specifications. Hibernate is the implementation of all the JPA guidelines.
+	
+JPA									Hibernate
+JPA is described in javax.persistence package.				Hibernate is described in org.hibernate package.
+It describes the handling of relational data in Java applications.      Hibernate is an Object-Relational Mapping (ORM) tool that is used to save the Java objects in 									      the relational database system.
+It is not an implementation. It is only a Java specification.		Hibernate is an implementation of JPA. Hence, the common standard which is given by JPA is followed by Hibernate.
+	
 It is a standard API that permits to perform database operations.	It is used in mapping Java data types with SQL data types and database tables.
-As an object-oriented query language, it uses Java Persistence Query Language (JPQL) to execute database operations.	As an object-oriented query language, it uses Hibernate Query Language (HQL) to execute database operations.
-To interconnect with the entity manager factory for the persistence unit, it uses EntityManagerFactory interface. Thus, it gives an entity manager.	To create Session instances, it uses SessionFactory interface.
-To make, read, and remove actions for instances of mapped entity classes, it uses EntityManager interface. This interface interconnects with the persistence condition.	To make, read, and remove actions for instances of mapped entity classes, it uses Session interface. It acts as a runtime interface between a Java application and Hibernate.
+As an object-oriented query language, it uses Java Persistence 
+Query Language (JPQL) to execute database operations.			As an object-oriented query language, it uses Hibernate Query Language (HQL) to execute 									database operations.
+
+	
+	
+### JPA @Transient 
+Java's transient keyword is used to denote that a field is not to be serialized, whereas JPA's @Transient annotation is used to indicate that a field is not to be persisted in the database
+```
+public enum Gender { MALE, FEMALE, UNKNOWN }
+
+@Entity
+public Employee {
+    private Gender g;
+    private long id;
+
+    @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    public long getId() { return id; }
+    public void setId(long id) { this.id = id; }
+
+    public Gender getGender() { return g; }    
+    public void setGender(Gender g) { this.g = g; }
+
+    @Transient
+    public boolean isMale() {
+        return Gender.MALE.equals(g);
+    }
+
+```
+	
+### Attribute Overriding
+You can override also other column properties (not just changing names). Ex:length of field
+
+### Optimistic locking and automatic retry
+
+- Optimistic locking is when you check if the record was updated by someone else before you commit the transaction.
+- Pessimistic locking is when you take an exclusive lock so that no one else can start modifying the record.
+- You cannot combine optimistic locking with the automatic retry. An optimistic locking assumes a manual intervention in order to decide whether to proceed with the update.
+- If you don’t care about the previous updates applied to the record, don’t implement any locking strategy.
+
+
+### JPA optimistic locking vs synchronized Java method
+Drawbacks of method synchronization:
+1.	You will serialize the updates for all of the entity instances belonging to that entity class. Two concurrent threads will not be able to update two different instances.
+2.	It does not work in cluster.
+3.	Maintenance is more difficult. If the operations with the entity become more complex so it becomes possible to update the entity in multiple services, or you need to update instances of different such entity classes in the same transaction, you will have to synchronize them all.
+4.	Point 3) increases the chances for deadlocks.
+5.	You will have to ensure to execute the entire transaction holding the necessary synchronization locks, otherwise, if you release the lock before you commit the transaction, a concurrent transaction may obtain the lock and proceed with changing the same data.
+6.	Depending on use cases, even if threads/transactions are not concurrent, without versioning you don't know whether the data has changed in the meantime (for example, you fetch data, modify something on the client based on the data, then somebody else changes that data, and then you save your modifications).
+Think of synchronization as pessimistic locking: you have to reserve the lock before you start working as opposed to checking if you violated the lock only when you finished working (optimistic lock during commit). The two serve very different purposes:
+- Optimistic lock is only there to guarantee there is no inconsistent database state (prevents overwriting data unknowingly) but it does not guarantee you won't get an OptimisticLockException an fail to change the db row. For this reason optimistic lock has much better performance.
+- Pessimistic locking guarantees that you will never fail to write a row and you will know its most up to date values (as long as you synchronize everywhere where you use this entity)
+
+
+	
+	
+	
+### FetchMode vs. FetchType
+In general, FetchMode defines how Hibernate will fetch the data (by select, join or subselect). FetchType, on the other hand, defines whether Hibernate will load data eagerly or lazily.
+The exact rules between these two are as follows:
+- if the code doesn't set FetchMode, the default one is JOIN and FetchType works as defined
+- with FetchMode.SELECT or FetchMode.SUBSELECT set, FetchType also works as defined
+- with FetchMode.JOIN set, FetchType is ignored and a query is always eager
+
+
+```
+	Customer.java
+@Entity
+@Table(name = "CUSTOMER")
+public class Customer {
+    @Id
+    @GeneratedValue
+    private Long id;
+
+    @OneToMany
+    @Fetch(FetchMode.SELECT)
+    private Set < Orders > orders = new HashSet < Orders > ();
+
+    //setters and getters
+}
+
+Orders.java
+@Entity
+@Table(name = "ORDERS")
+public class Orders {
+
+    @Id
+    @GeneratedValue
+    private Long id;
+
+    private String name;
+
+    @ManyToOne
+    @JoinColumn(name = "customer_id")
+    private Customer customer;
+
+    //setters and getters
+}
+
+
+```	
+	
+
+
+
+
+
+### NamedStoredProcedureQuery
+
+```
+
+
+CREATE OR REPLACE FUNCTION calculate(
+    IN x double precision,
+    IN y double precision,
+    OUT sum double precision)
+  RETURNS double precision AS
+$BODY$
+BEGIN
+    sum = x + y;
+END;
+$BODY$
+  LANGUAGE plpgsql
+
+
+
+@NamedStoredProcedureQuery(
+ name = "calculate", 
+    procedureName = "calculate", 
+    parameters = { 
+        @StoredProcedureParameter(mode = ParameterMode.IN, type = Double.class, name = "x"), 
+        @StoredProcedureParameter(mode = ParameterMode.IN, type = Double.class, name = "y"), 
+        @StoredProcedureParameter(mode = ParameterMode.OUT, type = Double.class, name = "sum")
+    }
+)
+
+
+
+StoredProcedureQuery query = this.em.createNamedStoredProcedureQuery("calculate");
+query.setParameter("x", 1.23d);
+query.setParameter("y", 4.56d);
+query.execute();
+Double sum = (Double) query.getOutputParameterValue("sum");
+```
