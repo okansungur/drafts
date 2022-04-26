@@ -459,6 +459,9 @@ Prefer bidirectional associations: Unidirectional associations are more difficul
 
 One to Many or Many to Many  for big data it is not good to use bidirectional.
 You also need to use add/remove utility methods for bidirectional associations to make sure that both sides are properly synchronized.
+
+Hibernate Dirty Checking checks objects state has changed or not without using hashcode or equalsWith FlushMode.Manuel we avoid it.
+Cascadetype.Remove and **orphanremovel=true** Especially with OnetoMany associations (Producu=>Review) if we set a review null it is deleted from db.
 	
 
 ### Two types of fetch strategies in JPA are LAZY & Eager
@@ -514,6 +517,13 @@ JPA talks about two kinds of caches (cache):
 1) first-level cache (first-level cache) —caches data from a single transaction;
 2) second-level cache (second-level cache) —caches data for more than one transaction. The JPA provider can, but is not required to implement work with the second-level cache. This kind of cache can save access time and improve performance, but the downside is the ability to get outdated data.
 
+First level cache is session scoped and each entity is loaded once in a persistance context. It is terminated when the session is closed.
+Second level  is SessionFactory scoped and shared by all sessions created with the same session factory.
+if exist get from level 1 else from level 2 else from db. Avoid too many inserts and updates.
+Cache concureny strategies are ReadOnly-NonstrictReadWrite-ReadWrite-Transactional
+	For chaching Ehcache-2 >5.3  or Jcache, Hazelcast are used
+
+	
 ### How can you change the fetch strategy settings of any Entity attributes for individual queries (query) or search methods (find), then if Enity has an attribute with fetchType = LAZY, but for a specific query you need to make it EAGER or vice versa?
 For this, the EntityGraph API exists, it is used like this: using the NamedEntityGraph annotation for an Entity, it creates named EntityGraph objects that contain a list of attributes that need to change fetchType to EAGER, and then this name is specified in hits queries or the find method. As a result, the fetchType attribute of the Entity changes, but only for this request. There are two standard properties for specifying EntityGraph in hit:
 1) javax.persistence.fetchgraph – all attributes listed in EntityGraph change fetchType to EAGER, all others to LAZY
