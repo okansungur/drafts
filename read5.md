@@ -471,6 +471,9 @@ Don’t use FetchType.EAGER.Many-to-many associations only rarely represent pare
 EntityManager is an interface that describes an API for all basic operations on Enitity, data retrieval and other JPA entities. Essentially the main API for working with JPA. Basic operations:
 1) For operations on Entity: persist (adding Entity under JPA control), merge (updating), remove (delete), refresh (updating data), detach (removing from management JPA), lock (blocking Enity from changes in other thread),
 2) data Preparation: find (search and retrieval entity), createQuery, createNamedQuery, createNativeQuery , contains, createNamedStoredProcedureQuery, createStoredProcedureQuery
+
+If you want to call a stored procedure that you declared with the annotation __@NamedStoredProcedureQuery__ you should use the method __createNamedStoredProcedureQuery__, not **createStoredProcedureQuery**. The latter is for when you don't want to use the annotation and in that case you have to register the parameters by hand.
+	
 3) Preparation of other entities JPA: getTransaction, getEntityManagerFactory, getCriteriaBuilder, getMetamodel, getDelegate
 4) Work with EntityGraph: createEntityGraph, getEntityGraph
 5) General operations on EntityManager or all Entities: close, isOpen, getProperties, setProperty, clear.
