@@ -50,7 +50,7 @@ const (
 func main() {
 
 	var id int
-	var isim string
+	var name string
 
 	// connection string
 	psqlconn := fmt.Sprintf("host=%s port=%d user=%s password=%s dbname=%s sslmode=disable", host, port, user, password, dbname)
@@ -66,9 +66,9 @@ func main() {
 	}
 	defer rows.Close()
 	for rows.Next() {
-		rows.Scan(&id, &isim)
+		rows.Scan(&id, &name)
 
-		fmt.Println(id, isim)
+		fmt.Println(id, name)
 	}
 
 	// close database
