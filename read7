@@ -9,7 +9,13 @@ Run go from command porompt go run main.go
 go run main.go //runs directly
 go build main.go  //creates executable
 
+Unused variables
 
+```
+fmt.Println("Go hello")
+	x := 12
+	//fmt.Println("Result is ", x)
+	_ = x
 
-
+```
 
