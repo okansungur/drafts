@@ -6,7 +6,8 @@ For Visual studio add Go plugin and then from the view menu select command palle
 
 Run go from command porompt go run main.go
 
-
+go run main.go //runs directly
+go build main.go  //creates executable
 
 
 
