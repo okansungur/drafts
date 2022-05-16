@@ -26,3 +26,63 @@ All variables are initialized in go.
 go install github.com/lib/pq@latest
 go get github.com/lib/pq
 
+
+####### Go postgresql connection
+
+```
+package main
+
+import (
+	"database/sql"
+	"fmt"
+
+	_ "github.com/lib/pq"
+)
+
+const (
+	host     = "localhost"
+	port     = 5432
+	user     = "postgres"
+	password = "postgres"
+	dbname   = "school"
+)
+
+func main() {
+
+	var id int
+	var isim string
+
+	// connection string
+	psqlconn := fmt.Sprintf("host=%s port=%d user=%s password=%s dbname=%s sslmode=disable", host, port, user, password, dbname)
+
+	// open database
+	db, err := sql.Open("postgres", psqlconn)
+	CheckError(err)
+	fmt.Println("Connected!")
+	rows, err := db.Query("select id, name from students ")
+	if err != nil {
+		fmt.Println("Error", err)
+
+	}
+	defer rows.Close()
+	for rows.Next() {
+		rows.Scan(&id, &isim)
+
+		fmt.Println(id, isim)
+	}
+
+	// close database
+	defer db.Close()
+
+	// check db
+	err = db.Ping()
+	CheckError(err)
+
+}
+
+func CheckError(err error) {
+	if err != nil {
+		panic(err)
+	}
+}
+```
