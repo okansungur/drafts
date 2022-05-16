@@ -27,7 +27,7 @@ go install github.com/lib/pq@latest
 go get github.com/lib/pq
 
 
-####### Go postgresql connection
+#### Go postgresql connection
 
 ```
 package main
