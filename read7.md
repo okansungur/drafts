@@ -21,3 +21,4 @@ fmt.Println("Go hello")
 
 ```
 
+All variables are initialized in go.
