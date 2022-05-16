@@ -6,7 +6,7 @@
 
 For Visual studio add Go plugin and then from the view menu select command pallette type Go install update option. This will install all available packages necessary.
 
-Run go from command porompt go run main.go
+Run go from command prompt __go run main.go__
 
 go run main.go //runs directly
 go build main.go  //creates executable
