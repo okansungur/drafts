@@ -22,3 +22,7 @@ fmt.Println("Go hello")
 ```
 
 All variables are initialized in go.
+
+go install github.com/lib/pq@latest
+go get github.com/lib/pq
+
