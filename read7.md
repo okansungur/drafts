@@ -86,3 +86,28 @@ func CheckError(err error) {
 	}
 }
 ```
+
+
+
+
+Web Server
+```
+package main
+
+import (
+	
+	"fmt"
+
+	"net/http"
+)
+
+func main() {
+	http.HandleFunc("/", handler)
+	http.ListenAndServe(":8181", nil)
+}
+
+func handler(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprintf(w, "<h1>Hello World!</h1>")
+}
+
+```
