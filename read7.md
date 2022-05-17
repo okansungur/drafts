@@ -146,6 +146,7 @@ http://localhost:8181/static/
 package main
 
 import (
+	"encoding/json"
 	"fmt"
 	"net/http"
 
@@ -171,9 +172,28 @@ func newRouter() *mux.Router {
 	staticFileHandler := http.StripPrefix("/static/", http.FileServer(staticFileDirectory))
 
 	r.PathPrefix("/static/").Handler(staticFileHandler).Methods("GET")
+	r.HandleFunc("/student", getStudentHandler).Methods("GET")
 
 	return r
 }
+
+type Student struct {
+	Name string `json:"name"`
+	Age  int    `json:"age"`
+}
+
+func getStudentHandler(w http.ResponseWriter, r *http.Request) {
+	john := Student{`John Wick`, 44}
+	studentListBytes, err := json.Marshal(john)
+
+	if err != nil {
+		w.WriteHeader(http.StatusInternalServerError)
+		return
+	}
+
+	w.Write(studentListBytes)
+}
+
 
 ```
 
