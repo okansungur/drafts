@@ -110,11 +110,29 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "<h1>Hello World!</h1>")
 }
 
-```
+
 
 go get github.com/gorilla/mux
 
 
+package main
+import (
+	"fmt"
+	"net/http"
+	"github.com/gorilla/mux"
+)
+func newRouter() *mux.Router {
+	r := mux.NewRouter()
+	r.HandleFunc("/hello", handler).Methods("GET")
+	return r
+}
+func main() {
+	r := newRouter()
+	http.ListenAndServe(":8181", r)
+}
+func handler(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprintf(w, "Hello World!")
+}
 
 
-
+```
