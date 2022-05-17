@@ -139,6 +139,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 mkdir static
 place static/index.html
 
+http://localhost:8181/static/
 
 
 ```
