@@ -43,23 +43,26 @@ const (
 	host     = "localhost"
 	port     = 5432
 	user     = "postgres"
-	password = "postgres"
-	dbname   = "school"
+	password = "qaq123"
+	dbname   = "postgres"
 )
+
+type Student struct {
+	Species     string
+	Description string
+}
 
 func main() {
 
 	var id int
 	var name string
 
-	// connection string
 	psqlconn := fmt.Sprintf("host=%s port=%d user=%s password=%s dbname=%s sslmode=disable", host, port, user, password, dbname)
 
-	// open database
 	db, err := sql.Open("postgres", psqlconn)
 	CheckError(err)
 	fmt.Println("Connected!")
-	rows, err := db.Query("select id, name from students ")
+	rows, err := db.Query("select id, name from school.student ")
 	if err != nil {
 		fmt.Println("Error", err)
 
@@ -71,10 +74,8 @@ func main() {
 		fmt.Println(id, name)
 	}
 
-	// close database
 	defer db.Close()
 
-	// check db
 	err = db.Ping()
 	CheckError(err)
 
