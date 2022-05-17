@@ -141,5 +141,42 @@ place static/index.html
 
 
 
+```
+package main
+
+import (
+	"fmt"
+	"net/http"
+
+	"github.com/gorilla/mux"
+)
+
+func main() {
+	r := newRouter()
+	http.ListenAndServe(":8181", r)
+}
+
+func handler(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprintf(w, "")
+}
+
+func newRouter() *mux.Router {
+	r := mux.NewRouter()
+
+	r.HandleFunc("/deneme", handler).Methods("GET")
+
+	staticFileDirectory := http.Dir("./static/")
+
+	staticFileHandler := http.StripPrefix("/static/", http.FileServer(staticFileDirectory))
+
+	r.PathPrefix("/static/").Handler(staticFileHandler).Methods("GET")
+
+	return r
+}
+
+```
+
+
+
 
 
