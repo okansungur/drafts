@@ -47,7 +47,10 @@ const (
 	dbname   = "postgres"
 )
 
-
+type Student struct {
+	id   int
+	name string
+}
 
 func main() {
 
@@ -65,11 +68,15 @@ func main() {
 
 	}
 	defer rows.Close()
+	students := []Student{}
 	for rows.Next() {
 		rows.Scan(&id, &name)
+		student := Student{id, name}
+		students = append(students, student)
 
-		fmt.Println(id, name)
 	}
+
+	fmt.Printf("Length  %d Students : %+v", len(students), students)
 
 	defer db.Close()
 
@@ -83,6 +90,21 @@ func CheckError(err error) {
 		panic(err)
 	}
 }
+
+/*
+CREATE SEQUENCE school.stuid     INCREMENT 1    START 1 ;
+CREATE TABLE school.student (
+  id INTEGER DEFAULT nextval('school.stuid'::regclass) NOT NULL,
+  name VARCHAR(50),
+  age INTEGER,
+  address VARCHAR(50),
+  CONSTRAINT student_pkey PRIMARY KEY(id)
+)
+WITH (oids = false);
+INSERT INTO school.student ( "name", "age", "address") VALUES   (1, E'John-Wick', 34, E'New York');
+
+*/
+
 ```
 
 
