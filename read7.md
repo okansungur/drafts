@@ -47,10 +47,7 @@ const (
 	dbname   = "postgres"
 )
 
-type Student struct {
-	Species     string
-	Description string
-}
+
 
 func main() {
 
