@@ -163,14 +163,29 @@ http://localhost:8181/static/
 
 
 ```
+
+
 package main
 
 import (
-	"encoding/json"
+	"database/sql"
 	"fmt"
+
+	_ "github.com/lib/pq"
+
+	"encoding/json"
+
 	"net/http"
 
 	"github.com/gorilla/mux"
+)
+
+const (
+	host     = "localhost"
+	port     = 5432
+	user     = "postgres"
+	password = "qaq123"
+	dbname   = "postgres"
 )
 
 func main() {
@@ -198,13 +213,41 @@ func newRouter() *mux.Router {
 }
 
 type Student struct {
+	ID   int    `json:"id"`
 	Name string `json:"name"`
-	Age  int    `json:"age"`
 }
 
 func getStudentHandler(w http.ResponseWriter, r *http.Request) {
-	john := Student{`John Wick`, 44}
-	studentListBytes, err := json.Marshal(john)
+
+	var id int
+	var name string
+
+	psqlconn := fmt.Sprintf("host=%s port=%d user=%s password=%s dbname=%s sslmode=disable", host, port, user, password, dbname)
+
+	db, err := sql.Open("postgres", psqlconn)
+	CheckError(err)
+	fmt.Println("Connected!")
+	rows, err := db.Query("select id, name from school.student ")
+	if err != nil {
+		fmt.Println("Error", err)
+
+	}
+	defer rows.Close()
+	students := []Student{}
+	for rows.Next() {
+		rows.Scan(&id, &name)
+		student := Student{id, name}
+		students = append(students, student)
+
+	}
+	fmt.Printf("Length  %d Students : %+v", len(students), students)
+
+	defer db.Close()
+
+	err = db.Ping()
+	CheckError(err)
+
+	studentListBytes, err := json.Marshal(students)
 
 	if err != nil {
 		w.WriteHeader(http.StatusInternalServerError)
@@ -213,6 +256,12 @@ func getStudentHandler(w http.ResponseWriter, r *http.Request) {
 
 	w.Write(studentListBytes)
 }
+func CheckError(err error) {
+	if err != nil {
+		panic(err)
+	}
+}
+
 
 
 ```
