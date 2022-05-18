@@ -315,3 +315,64 @@ func main() {
 
 
 ```
+
+Form Post 
+```
+package main
+
+import (
+	"html/template"
+	"net/http"
+)
+
+type ContactDetails struct {
+	Name    string
+	Message string
+}
+
+func main() {
+	tmpl := template.Must(template.ParseFiles("form.html"))
+
+	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		if r.Method != http.MethodPost {
+			tmpl.Execute(w, nil)
+			return
+		}
+
+		details := ContactDetails{
+			Name: r.FormValue("name"),
+
+			Message: r.FormValue("message"),
+		}
+
+		_ = details
+
+		tmpl.Execute(w, struct {
+			Success bool
+			Mymsg   string
+		}{true, "Bravo"})
+
+	})
+
+	http.ListenAndServe(":8282", nil)
+}
+
+//HTML
+{{if .Success}}
+    <h1> {{.Mymsg}}
+	
+	</h1>
+{{else}}
+    <h1></h1>
+    <form method="POST">
+        <label>Name:</label><br />
+        <input type="text" name="name"><br />
+        <label>Message:</label><br />
+        <textarea name="message"></textarea><br />
+        <input type="submit">
+    </form>
+{{end}}
+
+
+
+```
