@@ -420,6 +420,61 @@ func goRoutineSample(wait4 *sync.WaitGroup) {
 
 ```
 
+### Mutex
 
+```
+
+
+package main
+
+import (
+	"fmt"
+	"runtime"
+	"sync"
+	"time"
+)
+
+func main() {
+
+	var wait4 sync.WaitGroup
+
+	const money = 100
+
+	wait4.Add(money * 2)
+
+	var guessNumber int = 0
+
+	var mymutex sync.Mutex
+
+	//goroutine1
+	for i := 0; i < money; i++ {
+		go func() {
+			time.Sleep(time.Second / 20)
+			mymutex.Lock()
+			guessNumber++
+			mymutex.Unlock()
+			wait4.Done()
+		}()
+
+		//goroutine2
+
+		go func() {
+			time.Sleep(time.Second / 20)
+			mymutex.Lock()
+			defer mymutex.Unlock()
+
+			guessNumber--
+
+			wait4.Done()
+		}()
+
+	}
+
+	fmt.Println("Nb of goroutine", runtime.NumGoroutine())
+	wait4.Wait()
+	fmt.Println("guessNumber", guessNumber) //It is not stable  go run -race main.go
+	//After defining mymutex now it is OK!
+
+```
 
 
