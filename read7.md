@@ -376,3 +376,50 @@ func main() {
 
 
 ```
+
+### Concurency
+
+```
+
+package main
+
+import (
+	"fmt"
+	"runtime"
+	"sync"
+)
+
+func main() {
+
+	var wait4 sync.WaitGroup
+
+	wait4.Add(1)
+
+	fmt.Println("CPU", runtime.NumCPU())
+	fmt.Println("Nb of goroutine", runtime.NumGoroutine())
+	fmt.Println("OS", runtime.GOOS)
+	fmt.Println("ARC", runtime.GOARCH)
+	fmt.Println("CPU", runtime.GOMAXPROCS(0))
+	go goRoutineSample(&wait4)
+	fmt.Println("Nb of goroutine", runtime.NumGoroutine())
+
+	wait4.Wait()
+
+}
+
+func goRoutineSample(wait4 *sync.WaitGroup) {
+	fmt.Println("ExecutionStarted")
+
+	for i := 0; i < 10; i++ {
+		fmt.Println("i=", i)
+
+	}
+	fmt.Println("ExecutionEnded")
+	wait4.Done()
+}
+
+```
+
+
+
+
