@@ -585,6 +585,7 @@ func studentCreate(w http.ResponseWriter, r *http.Request) {
 
 	if err != nil {
 		fmt.Println("Something went wrong!")
+		getError(w, err)
 	}
 
 	defer database.Close()
@@ -592,6 +593,7 @@ func studentCreate(w http.ResponseWriter, r *http.Request) {
 	q, err := database.Exec(sql)
 	if err != nil {
 		fmt.Println(err)
+		getError(w, err)
 	}
 	fmt.Println(q)
 }
@@ -669,5 +671,6 @@ func CheckError(err error) {
 
 	}
 }
+
 
 ```
