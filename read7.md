@@ -694,6 +694,7 @@ WITH (oids = false);
 
 
 
-  
+ docker build -t my-docker-image .
+ docker run -it -p 8181:8181 imageid
   
 ```
