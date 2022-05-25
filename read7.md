@@ -600,7 +600,7 @@ func studentRouter(w http.ResponseWriter, r *http.Request) {
 }
 
 type Student struct {
-	ID   int    `json:"id"`
+	ID   int    `json:"id"`  //key is id
 	Name string `json:"name"`
 }
 
@@ -764,3 +764,50 @@ EXPOSE 8181
 CMD ["deneme"]
 
 ```
+
+
+
+
+
+ 
+ go get -u github.com/gorilla/mux
+ 
+ 
+ Gorilla is a web framework. It has routing package that we will use in our example.
+ gorilla/mux package implements a request router and dispatcher for matching incoming requests to their respective handler.
+ mux  stands for "HTTP request multiplexer".
+ After creating the Router we  have to register  routes mapping URL paths to handlers.
+ 
+
+
+ http Stripprefix forwards the processing  by modifying the request URL by stripping the specified prefix.
+
+
+Struct is  collection of data fields with declared with name and data types. If you are familiar with OOP we can think of a struct like classes.
+Go does not have a class-object architecture so we have structs which hold complex data structures.The name and type can not be changed at runtime  
+
+The encoding/json package generates JSON documents from Go objects
+We have used Marshal function to convert Go objects to JSON
+
+In  Go  nil is a zero value. 
+go mod init  and go mod tidy create mod files and this will be used for creating docker image
+
+strconv Package provide conversions to and from string representations of basic data types 
+strconv.Itoa   takes one parameter of int type and returns a string and strconv.Atoi is used to convert string type into int type
+
+
+
+
+YAML support for the Go language is provided by "gopkg.in/yaml.v3" package
+We used studentRouter to create a student struct to yaml. The marshal method to  serialize the  values  into a YAML document.
+
+
+We used sql/database, a package contains common interface for sql-related operation. To use it we need a concrete implementation of the interface, and  it's the database driver. If _ "github.com/lib/pq" package is forgotten we will get the error
+"Error sql: unknown driver "postgres" (forgotten import?)"
+ 
+
+
+
+
+
+
