@@ -676,8 +676,24 @@ func CheckError(err error) {
 ```
 
   go get gopkg.in/yaml.v3
-     go get github.com/lib/pq
-       go get github.com/gorilla/mux
+  
+  go get github.com/lib/pq
+  
+  go get github.com/gorilla/mux
      
   
+  ```
+  CREATE TABLE school.student (
+  id INTEGER DEFAULT nextval('school.stuid'::regclass) NOT NULL,
+  name VARCHAR(50),
+  age INTEGER,
+  address VARCHAR(50),
+  CONSTRAINT student_pkey PRIMARY KEY(id)
+) 
+WITH (oids = false);
+
+
+
   
+  
+```
