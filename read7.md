@@ -829,5 +829,13 @@ FormValue parameter we get the parameters from the inputs provided by th ehtml p
 with getError  method we print the error message as a response 
 
 
+If you are using the docker file or docker-compose and  get the exception 
+dial tcp 127.0.0.1:5432: connect: connection refused
+change the host  as
+ "host.docker.internal"
+ This will fix the error
+
+
+
 
 
