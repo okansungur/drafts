@@ -811,3 +811,23 @@ We used sql/database, a package contains common interface for sql-related operat
 
 
 
+rows is the resultset 
+
+db.Query for querrying database
+To avoid SQL injection do not use string formatting functions such as fmt.Sprintf
+query := fmt.Sprintf("SELECT * FROM school WHERE name = XX" );
+
+
+read the columns in each row into variables with rows.Scan()
+We check for errors after we’re done iterating over the rows.
+use defer ??
+
+panic()  is  an inbuilt  function in go. We use it for handling particular errors and it i,s also by the program itself when an unexpected error occurs at runtime
+
+
+FormValue parameter we get the parameters from the inputs provided by th ehtml page
+with getError  method we print the error message as a response 
+
+
+
+
