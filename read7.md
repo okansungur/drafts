@@ -531,10 +531,10 @@ import (
 )
 
 const (
-	host     = "localhost"
+	host     = "host.docker.internal"
 	port     = 5432
 	user     = "postgres"
-	password = "qaq123"
+	password = "postgres"
 	dbname   = "postgres"
 )
 
@@ -544,22 +544,14 @@ func main() {
 	http.ListenAndServe(":8181", r)
 }
 
-func handler(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "")
-}
-
 func newRouter() *mux.Router {
 	r := mux.NewRouter()
 
-	r.HandleFunc("/deneme", handler).Methods("GET")
-
 	staticFileDirectory := http.Dir("./static/")
-
 	staticFileHandler := http.StripPrefix("/static/", http.FileServer(staticFileDirectory))
-
 	r.PathPrefix("/static/").Handler(staticFileHandler).Methods("GET")
 	r.HandleFunc("/student", getStudentHandler).Methods("GET")
-	r.HandleFunc("/api/StudentCreate", studentCreate).Methods("POST")
+	r.HandleFunc("/api/v1/StudentCreate", studentCreate).Methods("POST")
 
 	r.HandleFunc("/mystudent", studentRouter)
 
@@ -585,7 +577,6 @@ func studentCreate(w http.ResponseWriter, r *http.Request) {
 
 	if err != nil {
 		fmt.Println("Something went wrong!")
-		getError(w, err)
 	}
 
 	defer database.Close()
@@ -601,8 +592,8 @@ func studentCreate(w http.ResponseWriter, r *http.Request) {
 func studentRouter(w http.ResponseWriter, r *http.Request) {
 
 	myStudent := Student{}
-	myStudent.ID = 1571
-	myStudent.Name = "Kong"
+	myStudent.ID = 2005
+	myStudent.Name = "King Kong"
 
 	output, _ := yaml.Marshal(&myStudent)
 	fmt.Fprintln(w, string(output))
@@ -673,6 +664,7 @@ func CheckError(err error) {
 }
 
 
+
 ```
 
   go get gopkg.in/yaml.v3
@@ -697,4 +689,78 @@ WITH (oids = false);
  docker build -t my-docker-image .
  docker run -it -p 8181:8181 imageid
   
+```
+
+init . sql
+```
+CREATE SCHEMA school AUTHORIZATION postgres;
+
+
+CREATE SEQUENCE school.stuid INCREMENT 1 START 1;
+
+CREATE TABLE school.student (
+  id INTEGER DEFAULT nextval('school.stuid'::regclass) NOT NULL,
+  name VARCHAR(50),
+  age INTEGER,
+  address VARCHAR(50),
+  CONSTRAINT student_pkey PRIMARY KEY(id)
+) 
+WITH (oids = false);
+
+INSERT INTO school.student ("id", "name", "age", "address") VALUES   (1, E'John-Wick', 34, E'New York'),   (2, E'Selena Gomez', 38, E'Los Angeles');
+```
+
+
+```
+version: '3.9'
+
+services:
+  app:
+    container_name: goappdev
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - 8181:8181
+    depends_on:
+     - postgresdb
+    
+  
+  postgresdb:
+    container_name: dev-db
+    image: postgres:latest
+    ports:
+     - "5432:5432"
+    environment:
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "postgres"
+      POSTGRES_DB: "postgres"
+    volumes:
+     - ./init.sql:/docker-entrypoint-initdb.d/1-init.sql
+
+```
+
+
+```
+
+FROM golang:1.18.2
+
+# Select the working directory
+WORKDIR D:\ArGe\GO\sample4
+
+# Copy everything from the current directory to the PWD (Present Working Directory) inside the container
+COPY . .
+
+# Download all the dependencies
+RUN go get -d -v ./...
+
+# Install the package
+RUN go install -v ./...
+
+# Expose port 8181 to the outside world
+EXPOSE 8181
+
+# Run the executable
+CMD ["deneme"]
+
 ```
