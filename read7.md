@@ -1,5 +1,6 @@
 
 ### Go
+Go is best suited for system programming.
 #### Go Playground     
 - (https://go.dev/play/)
 - (https://goplay.space/)
