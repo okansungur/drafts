@@ -18,3 +18,7 @@ JAX-RS is a specification for implementing java web sercvices Implementations ar
 3- Apache CXF => open-source web service framework CXF filter sitting behind the servlets, while Jersey and RestEasy are, servlet filters
 
 4- RESTEasy => RESTEasy may be a good choice if your environment is JBoss. It also provides good integration with EJB 3.0
+
+
+
+Having an object with 10 contructor arguments is not productive (Creational Patterns)
