@@ -211,6 +211,7 @@ public class TestFactory {
 
 
 //Structural Design Patterns - Adapter Pattern
+ This pattern involves a single class which is responsible to join functionalities of independent or incompatible interfaces.
 ```
 interface Journey {
     void travel();
@@ -222,7 +223,7 @@ class Car { // Car class
     }
 }
 
-class Driver {  // Driver class with a constructor taking Journey class parameter
+class Driver {  // Driver  class with a constructor taking Journey class parameter 
 
     private final Journey journey;
 
