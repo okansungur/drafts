@@ -148,3 +148,64 @@ class Car {
  }
 
 ```
+
+__Factory design pattern sample__
+ It allows the consumer to create new objects without having to know the details of how they're created. Define an interface or an abstract class and let the subclasses decide which object to instantiate.
+  Factory Pattern is one of the way implementing Dependency Injection.We minimize code duplication and we create  more customizable code by using an interface
+ ex:  java.sql.DriverManager#getConnection()
+
+
+
+```
+
+ interface Notification {
+    void sendNotification();
+}
+
+ class MailNotification implements Notification {
+
+     @Override
+     public void sendNotification() {
+         System.out.println("sending mail notification...");
+     }
+ }
+
+ class SMSNotification implements Notification {
+
+     @Override
+     public void sendNotification() {
+         System.out.println("sending sms notification...");
+     }
+ }
+
+ class NotificationFactory {
+     public Notification createNotification(String method)
+     {
+         if (method == null || method.isEmpty())
+             return null;
+         switch (method) {
+             case "EMAIL":
+                 return new MailNotification();
+             case "SMS":
+                 return new SMSNotification();
+
+             default:
+                 throw new IllegalArgumentException("Unknown method "+method);
+         }
+     }
+ }
+
+
+public class TestFactory {
+
+    public static void main(String[] args) {
+       NotificationFactory notificationFactory=new NotificationFactory();
+       Notification notification=notificationFactory.createNotification("SMS");
+       notification.sendNotification();
+
+    }
+
+}
+
+```
+
