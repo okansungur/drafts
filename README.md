@@ -209,3 +209,59 @@ public class TestFactory {
 
 ```
 
+
+//Structural Design Patterns - Adapter Pattern
+
+interface Journey {
+    void travel();
+}
+
+class Car { // Car class
+    public void drive() {
+        System.out.println("The car is  moving");
+    }
+}
+
+class Driver {  // Driver class with a constructor taking Journey class parameter
+
+    private final Journey journey;
+
+    public Driver(Journey journey) {
+        this.journey=journey;
+    }
+
+    public void travel() {
+        journey.travel();
+    }
+}
+
+class  CarAdapter implements Journey {
+
+    private final Car car;
+
+    public CarAdapter() {
+        car = new Car();
+    }
+
+
+    @Override
+    public void travel() {
+        car.drive();
+    }
+}
+
+public class AdapterPattern {
+
+    public static void main(String[] args) {
+
+       /* Captain captain = new Captain(new FishingBoatAdapter());
+        captain.row();*/
+
+        Driver driver=new Driver(new CarAdapter());
+        driver.travel();
+
+    }
+
+}
+
+
