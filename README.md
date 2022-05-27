@@ -88,14 +88,14 @@ class Car {
         isAutomaticTransmission = automaticTransmission;
     }
 
-    private Car(CarBuilder builder) {
+    private Car(CarBuilder builder) {  //Constructor is private!!!!!!!!!
         this.make=builder.make;
         this.model=builder.model;
         this.year=builder.year;
         this.isAutomaticTransmission=builder.isAutomaticTransmission;
     }
 
-    //The Builder Class
+    //Static  Builder Class !!!!
     public static class CarBuilder{
 
         private String make;
