@@ -211,7 +211,7 @@ public class TestFactory {
 
 
 //Structural Design Patterns - Adapter Pattern
-
+```
 interface Journey {
     void travel();
 }
@@ -265,3 +265,4 @@ public class AdapterPattern {
 }
 
 
+```
