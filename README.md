@@ -149,8 +149,8 @@ class Car {
 
 ```
 
-__Factory design pattern sample__
- It allows the consumer to create new objects without having to know the details of how they're created. Define an interface or an abstract class and let the subclasses decide which object to instantiate.
+__Factory method design pattern sample__
+ It allows the consumer to create new objects without having to know the details of how they're created. Define an interface or an abstract class and let the subclasses decide which object to instantiate. The factory pattern decides on certain criteria ("SMS" or "MAIL") what object should be created, so it is easy to maintain this logic in one place, instead of searching it through the whole system.
   Factory Pattern is one of the way implementing Dependency Injection.We minimize code duplication and we create  more customizable code by using an interface
  ex:  java.sql.DriverManager#getConnection()
 
@@ -184,7 +184,7 @@ __Factory design pattern sample__
          if (method == null || method.isEmpty())
              return null;
          switch (method) {
-             case "EMAIL":
+             case "MAIL":
                  return new MailNotification();
              case "SMS":
                  return new SMSNotification();
