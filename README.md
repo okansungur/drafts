@@ -254,9 +254,7 @@ public class AdapterPattern {
 
     public static void main(String[] args) {
 
-       /* Captain captain = new Captain(new FishingBoatAdapter());
-        captain.row();*/
-
+       
         Driver driver=new Driver(new CarAdapter());
         driver.travel();
 
