@@ -211,7 +211,10 @@ public class TestFactory {
 
 
 //Structural Design Patterns - Adapter Pattern
+
  This pattern involves a single class which is responsible to join functionalities of independent or incompatible interfaces.
+ 
+ 
  ```
     JFrame f = new JFrame("Test");
     f.addWindowListener(new WindowAdapter() {
@@ -221,7 +224,9 @@ public class TestFactory {
             System.out.println(e);
         }
     });
-    ```
+```
+
+
 ```
 interface Journey {
     void travel();
