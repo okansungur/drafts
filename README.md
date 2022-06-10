@@ -286,7 +286,7 @@ Singleton Design Patterns
 - Eager initialization : Does not provide any options for exception handling. Not suitable if class uses a lot of resources such as file handling or database operations
 - Static block initialization:  Not the best practice as the instance will already be created  even if we don't use it.
 - Lazy Initialization:
--
+- Thread Safe Singleton
 ```
 public final class LazySingleton {
     private static volatile LazySingleton instance = null;
@@ -297,8 +297,8 @@ public final class LazySingleton {
 
     public static LazySingleton getInstance() {
         if (instance == null) {
-            synchronized (LazySingleton.class) {
-
+            synchronized (LazySingleton.class) { 
+               //Thread Safe
                 // Double check
                 if (instance == null) {
                     instance = new LazySingleton();
@@ -310,4 +310,20 @@ public final class LazySingleton {
     }
 }
 
+```
+
+- Bill Pugh Singleton Implementation:  The most widely used approach for Singleton class as it doesn’t require synchronization
+```
+public class BillPughSingleton {
+    private BillPughSingleton() {
+    }
+
+    private static class LazyHolder {
+        private static final BillPughSingleton singleton = new BillPughSingleton();
+    }
+
+    public static BillPughSingleton getInstance() {
+        return LazyHolder.singleton;
+    }
+}
 ```
