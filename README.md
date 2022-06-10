@@ -353,13 +353,22 @@ public class ReflectionSingleton{
 ```
 
 -  Enum Singleton : to overcome this Enum can be used but it doesnt have lazy init
-public enum EnumSingleton {
-
-   BillPughSingleton instanceOne ;
-    
-    public static void doSomething(){
-        //do something
+```
+public enum MySingleton {
+    INSTANCE;
+    private MySingleton() {
+        System.out.println("Here");
     }
-}
+/*
+  public static void main(String[] args) 
+System.out.println(MySingleton.INSTANCE.hashCode());
+System.out.println(MySingleton.INSTANCE.hashCode());
+*/
+```
+
+
+- Serialization and Singleton :  If we serialize a singleton class  whenever we deserialize it, it will create a new instance of the class.To overcome the problem
+
+
 
 
