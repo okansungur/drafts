@@ -284,5 +284,30 @@ public class AdapterPattern {
 
 Singleton Design Patterns
 - Eager initialization : Does not provide any options for exception handling. Not suitable if class uses a lot of resources such as file handling or database operations
-- Static block initialization:  Not the best practice as the instance even if we don't use instance it will be created
+- Static block initialization:  Not the best practice as the instance will already be created  even if we don't use it.
+- Lazy Initialization:
+-
+```
+public final class LazySingleton {
+    private static volatile LazySingleton instance = null;
 
+    // private constructor
+    private LazySingleton() {
+    }
+
+    public static LazySingleton getInstance() {
+        if (instance == null) {
+            synchronized (LazySingleton.class) {
+
+                // Double check
+                if (instance == null) {
+                    instance = new LazySingleton();
+                }
+
+            }
+        }
+        return instance;
+    }
+}
+
+```
