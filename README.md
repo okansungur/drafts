@@ -367,8 +367,46 @@ System.out.println(MySingleton.INSTANCE.hashCode());
 ```
 
 
-- Serialization and Singleton :  If we serialize a singleton class  whenever we deserialize it, it will create a new instance of the class.To overcome the problem
+- Serialization and Singleton :  If we serialize a singleton class  whenever we deserialize it, it will create a new instance of the class like in reflection.To overcome the problem we use readResolve() method 
+
+```
+
+public class SingletonSerialized implements Serializable{
+
+    private static final long serialVersionUID = -7604766932017737115L;
+
+    private SingletonSerialized(){}
+
+    private static class SingletonHelper{
+        private static final SingletonSerialized instance = new SingletonSerialized();
+    }
+
+    public static SingletonSerialized getInstance(){
+        return SingletonHelper.instance;
+    }
+
+ //Overcome the problem!!!
+    protected Object readResolve() {
+        return getInstance();
+    }
+
+}
 
 
+/*
+//Test the code
+       SingletonSerialized firstInstance = SingletonSerialized.getInstance();
+        ObjectOutput out = new ObjectOutputStream(new FileOutputStream(
+                "test.abc"));
+        out.writeObject(firstInstance);
+        out.close();
 
+       ObjectInput in = new ObjectInputStream(new FileInputStream("test.abc"));
+        SingletonSerialized secondInstance = (SingletonSerialized) in.readObject();
+        in.close();
+        System.out.println("instanceOne hashCode="+firstInstance.hashCode());
+        System.out.println("instanceTwo hashCode="+secondInstance.hashCode());
+
+*/
+```
 
