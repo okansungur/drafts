@@ -408,5 +408,7 @@ public class SingletonSerialized implements Serializable{
         System.out.println("instanceTwo hashCode="+secondInstance.hashCode());
 
 */
+
+
 ```
 
