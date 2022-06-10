@@ -327,3 +327,39 @@ public class BillPughSingleton {
     }
 }
 ```
+- Reflection  destroys all Singleton Patterns 
+
+```
+public class ReflectionSingleton{
+
+    public static void main(String[] args) {
+        BillPughSingleton instanceOne = BillPughSingleton.getInstance();
+        BillPughSingleton instanceTwo = null;
+        try {
+            Constructor[] constructors = BillPughSingleton.class.getDeclaredConstructors();
+            for (Constructor constructor : constructors) {
+                //destroy the singleton pattern
+                constructor.setAccessible(true);
+                instanceTwo = (BillPughSingleton) constructor.newInstance();
+                break;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        System.out.println(instanceOne.hashCode());
+        System.out.println(instanceTwo.hashCode());
+    }
+
+```
+
+-  Enum Singleton : to overcome this Enum can be used but it doesnt have lazy init
+public enum EnumSingleton {
+
+   BillPughSingleton instanceOne ;
+    
+    public static void doSomething(){
+        //do something
+    }
+}
+
+
