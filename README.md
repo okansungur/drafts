@@ -280,3 +280,9 @@ public class AdapterPattern {
 
 
 ```
+
+
+Singleton Design Patterns
+- Eager initialization : Does not provide any options for exception handling. Not suitable if class uses a lot of resources such as file handling or database operations
+- Static block initialization:  Not the best practice as the instance even if we don't use instance it will be created
+
