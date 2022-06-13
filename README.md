@@ -412,3 +412,77 @@ public class SingletonSerialized implements Serializable{
 
 ```
 
+#### Template Pattern
+
+Template Method are generally used in frameworks and lets subclasses redefine certain steps of an algorithm without changing the algorithm's structure.
+
+```
+//******** MyConnection *********
+public abstract  class MyConnection {
+//we can use abstract or interface
+    abstract void Init();
+     abstract void Open();
+     abstract void Close();
+    //template method
+    public final  void executeSql(){
+        Init();
+        Open();
+        Close();
+    }
+}
+
+//******** MyPostgre *********
+public class MyPostgre extends MyConnection {
+    Connection con = null;
+    @Override
+    void Init() {
+        try {
+           con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres",
+                    "postgres", "qaq123");
+            System.out.println("Connection is initialized !");
+        } catch (Exception ex) {
+            ex.printStackTrace();
+       }
+    }
+
+    @Override
+    void Open()  {
+        try {
+        Statement statement=con.createStatement();
+        ResultSet resultSet=statement.executeQuery("  select now();");
+        if(resultSet.next())
+            System.out.println(resultSet.getString(1));
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    @Override
+    void Close() {
+        try{
+        if(con!=null){
+            con.close();
+            System.out.println("Connection is closed !");
+        }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+
+    }
+}
+
+
+//******** TemplatePattern  *********
+
+public class TemplatePattern {
+    public static void main(String[] args) {
+        MyConnection myConnection=new MyPostgre();
+        myConnection.executeSql();
+        myConnection.Open();//Exception
+    }
+}
+
+
+```
+
+
