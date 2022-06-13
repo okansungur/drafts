@@ -20,7 +20,7 @@ Builder design pattern helps to hide the complex logic in the builder It is used
 
 
 #### Behavioral Design Patterns
-- Template Method Pattern
+- Template Method Pattern(*)
 - Mediator Pattern
 - Chain of Responsibility Pattern
 - Observer Pattern
