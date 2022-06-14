@@ -620,6 +620,21 @@ interface Command
 }
 
 
+//******** LightningSystem  *********
+
+public class LightningSystem {
+
+        public void on()
+        {
+            System.out.println("Light is on");
+        }
+        public void off()
+        {
+            System.out.println("Light is off");
+        }
+    }
+
+
 //******** LightOnCommand  *********
 
 public class LightOnCommand implements Command
@@ -652,19 +667,7 @@ public class LightOffCommand implements Command {
 }
 
 
-//******** LightningSystem  *********
 
-public class LightningSystem {
-
-        public void on()
-        {
-            System.out.println("Light is on");
-        }
-        public void off()
-        {
-            System.out.println("Light is off");
-        }
-    }
     
     
 //******** Controller  *********
