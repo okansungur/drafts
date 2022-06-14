@@ -38,7 +38,7 @@ Builder design pattern helps to hide the complex logic in the builder It is used
 
 
 
-__Builder Patterns  Sample__
+##### Builder Patterns  Sample
  Builder pattern lets us construct  step-by-step of a complex object.
  We use builder to create immutable objects.In a multithread environment an immutable object can be shared between threads without explicit synchronization
  modifying it by two threads at the same time  is not possible. So instead of getters and setters we can use this pattern
@@ -46,6 +46,7 @@ __Builder Patterns  Sample__
 
 
 ```
+//******** Car  *********
 class Car {
 
 
@@ -135,7 +136,7 @@ class Car {
     }
 }
 
-
+//******** TestBuilderPattern  *********
  public class TestBuilderPattern {
 
      public static void main(String[] args) {
@@ -149,7 +150,7 @@ class Car {
 
 ```
 
-__Factory method design pattern sample__
+##### Factory method (design pattern)
  It allows the consumer to create new objects without having to know the details of how they're created. Define an interface or an abstract class and let the subclasses decide which object to instantiate. The factory pattern decides on certain criteria ("SMS" or "MAIL") what object should be created, so it is easy to maintain this logic in one place, instead of searching it through the whole system.
   Factory Pattern is one of the way implementing Dependency Injection.We minimize code duplication and we create  more customizable code by using an interface
  ex:  java.sql.DriverManager#getConnection()
@@ -157,10 +158,12 @@ __Factory method design pattern sample__
 
 
 ```
-
+//******** Notification  *********
  interface Notification {
     void sendNotification();
 }
+
+//******** MailNotification  *********
 
  class MailNotification implements Notification {
 
@@ -170,6 +173,8 @@ __Factory method design pattern sample__
      }
  }
 
+//******** SMSNotification  *********
+
  class SMSNotification implements Notification {
 
      @Override
@@ -177,6 +182,8 @@ __Factory method design pattern sample__
          System.out.println("sending sms notification...");
      }
  }
+
+//******** NotificationFactory  *********
 
  class NotificationFactory {
      public Notification createNotification(String method)
@@ -195,6 +202,7 @@ __Factory method design pattern sample__
      }
  }
 
+//******** TestFactory  *********
 
 public class TestFactory {
 
@@ -210,7 +218,7 @@ public class TestFactory {
 ```
 
 
-//Structural Design Patterns - Adapter Pattern
+##### Adapter Pattern (Structural Design Patterns)
 
  This pattern involves a single class which is responsible to join functionalities of independent or incompatible interfaces.
  
@@ -228,15 +236,22 @@ public class TestFactory {
 
 
 ```
+
+//******** Journey  *********
+
 interface Journey {
     void travel();
 }
+
+//******** Car  *********
 
 class Car { // Car class
     public void drive() {
         System.out.println("The car is  moving");
     }
 }
+
+//******** Driver  *********
 
 class Driver {  // Driver  class with a constructor taking Journey class parameter 
 
@@ -250,6 +265,8 @@ class Driver {  // Driver  class with a constructor taking Journey class paramet
         journey.travel();
     }
 }
+
+//******** CarAdapter  *********
 
 class  CarAdapter implements Journey {
 
@@ -266,11 +283,11 @@ class  CarAdapter implements Journey {
     }
 }
 
+//******** AdapterPattern  *********
+
 public class AdapterPattern {
 
-    public static void main(String[] args) {
-
-       
+    public static void main(String[] args) {      
         Driver driver=new Driver(new CarAdapter());
         driver.travel();
 
@@ -282,7 +299,7 @@ public class AdapterPattern {
 ```
 
 
-Singleton Design Patterns
+##### Singleton Design Patterns
 - Eager initialization : Does not provide any options for exception handling. Not suitable if class uses a lot of resources such as file handling or database operations
 - Static block initialization:  Not the best practice as the instance will already be created  even if we don't use it.
 - Lazy Initialization:
@@ -312,7 +329,7 @@ public final class LazySingleton {
 
 ```
 
-- Bill Pugh Singleton Implementation:  The most widely used approach for Singleton class as it doesn’t require synchronization
+__Bill Pugh Singleton Implementation__:  The most widely used approach for Singleton class as it doesn’t require synchronization
 ```
 public class BillPughSingleton {
     private BillPughSingleton() {
@@ -327,7 +344,7 @@ public class BillPughSingleton {
     }
 }
 ```
-- Reflection  destroys all Singleton Patterns 
+__Reflection  destroys all Singleton Patterns __
 
 ```
 public class ReflectionSingleton{
@@ -352,7 +369,7 @@ public class ReflectionSingleton{
 
 ```
 
--  Enum Singleton : to overcome this Enum can be used but it doesnt have lazy init
+__Enum Singleton__ : To overcome this Enum can be used but it doesnt have lazy init.
 ```
 public enum MySingleton {
     INSTANCE;
@@ -367,7 +384,7 @@ System.out.println(MySingleton.INSTANCE.hashCode());
 ```
 
 
-- Serialization and Singleton :  If we serialize a singleton class  whenever we deserialize it, it will create a new instance of the class like in reflection.To overcome the problem we use readResolve() method 
+__Serialization and Singleton__ :  If we serialize a singleton class  whenever we deserialize it, it will create a new instance of the class like in reflection.To overcome the problem we use __readResolve()__ method 
 
 ```
 
