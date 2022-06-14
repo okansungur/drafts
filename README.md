@@ -575,11 +575,112 @@ public class DecoratorPatternTest {
 
 
 
+```
+
+
+#### Command Pattern
+
+We can add new commands without changing existing code. Reduces coupling between the invoker and receiver of a command.But it will 
+increase  the number of classes for each individual command.
+
+
+
+```
+
+interface Command
+{
+    public void execute();
+}
+
+
+//******** LightOnCommand  *********
+
+public class LightOnCommand implements Command
+{
+    LightningSystem light;
+    public LightOnCommand(LightningSystem light)
+    {
+        this.light = light;
+    }
+    public void execute()
+    {
+        light.on();
+    }
+}
+
+//******** LightOffCommand  *********
+
+public class LightOffCommand implements Command {
+
+    LightningSystem light;
+
+    public LightOffCommand(LightningSystem light) {
+        this.light = light;
+    }
+
+    @Override
+    public void execute() {
+        light.off();
+    }
+}
+
+
+//******** LightningSystem  *********
+
+public class LightningSystem {
+
+        public void on()
+        {
+            System.out.println("Light is on");
+        }
+        public void off()
+        {
+            System.out.println("Light is off");
+        }
+    }
+    
+    
+//******** Controller  *********
+
+public  class Controller {
+
+    private Command command;
+
+    public void setCommand(Command command) {
+        this.command = command;
+    }
+
+    public void executeCommand() {
+        command.execute();
+    }
+}
+
+
+
+//******** CommandPatternTest  *********
+
+
+public class CommandPatternTest {
+    public static void main(String[] args) {
+        Controller controller = new Controller();
+        LightningSystem lightningSystem = new LightningSystem();
+        Command lightsOn = new LightOnCommand(lightningSystem);
+        Command lightsOff = new LightOffCommand(lightningSystem);
+        controller.setCommand(new LightOnCommand(lightningSystem));
+        controller.executeCommand();
+        controller.setCommand(new LightOffCommand(lightningSystem));
+        controller.executeCommand();
+    }
+}
 
 
 
 
 ```
+
+
+
+
 
 
 
