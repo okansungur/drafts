@@ -486,3 +486,100 @@ public class TemplatePattern {
 ```
 
 
+
+#### Decorator Pattern
+
+
+You should use the Decorator Pattern to add new behaviors by placing them inside special wrapper objects,   at runtime
+
+
+```
+
+
+//******** Piza  *********
+public interface Pizza
+{
+    public void getPizza();
+}
+
+
+//******** MexicanPizza  *********
+public class MexicanPizza  implements Pizza {
+    @Override
+    public void getPizza() {
+        System.out.print("Mexican Pizza");
+    }
+}
+
+
+//******** NeapolitanPizza  *********
+public class NeapolitanPizza implements Pizza
+{
+    @Override
+    public void getPizza()
+    {
+        System.out.print("Neapolitan  Pizza");
+    }
+}
+
+
+//******** PizzaDecorator  *********
+public abstract class PizzaDecorator implements Pizza
+{
+protected Pizza pizza;
+
+    public PizzaDecorator(Pizza pizza)
+    {
+        this.pizza=pizza;
+    }
+
+    @Override
+    public void getPizza() {
+        this.pizza.getPizza();
+    }
+}
+
+
+//******** PizzaWithSauce  *********
+public class PizzaWithSauce extends PizzaDecorator {
+
+    public PizzaWithSauce(Pizza pizza) {
+        super(pizza);
+    }
+
+    @Override
+    public void getPizza()
+    {
+        pizza.getPizza();
+        addSauce();
+
+    }
+    private void addSauce()
+    {
+        System.out.print(" with Garlic Sauce");
+    }
+
+}
+
+
+
+
+//******** DecoratorPatternTest  *********
+
+public class DecoratorPatternTest {
+    public static void main(String[] args) {
+        Pizza mypizza=new PizzaWithSauce(new MexicanPizza());
+        mypizza.getPizza();
+    }
+}
+
+
+
+
+
+
+
+```
+
+
+
