@@ -219,85 +219,6 @@ public class TestFactory {
 ```
 
 
-#### Adapter Pattern (Structural Design Patterns)
-
- This pattern involves a single class which is responsible to join functionalities of independent or incompatible interfaces.
- 
- 
- ```
-    JFrame f = new JFrame("Test");
-    f.addWindowListener(new WindowAdapter() {
-
-        @Override
-        public void windowClosing(WindowEvent e) {
-            System.out.println(e);
-        }
-    });
-```
-
-
-```
-
-//******** Journey  *********
-
-interface Journey {
-    void travel();
-}
-
-//******** Car  *********
-
-class Car { // Car class
-    public void drive() {
-        System.out.println("The car is  moving");
-    }
-}
-
-//******** Driver  *********
-
-class Driver {  // Driver  class with a constructor taking Journey class parameter 
-
-    private final Journey journey;
-
-    public Driver(Journey journey) {
-        this.journey=journey;
-    }
-
-    public void travel() {
-        journey.travel();
-    }
-}
-
-//******** CarAdapter  *********
-
-class  CarAdapter implements Journey {
-
-    private final Car car;
-
-    public CarAdapter() {
-        car = new Car();
-    }
-
-
-    @Override
-    public void travel() {
-        car.drive();
-    }
-}
-
-//******** AdapterPattern  *********
-
-public class AdapterPattern {
-
-    public static void main(String[] args) {      
-        Driver driver=new Driver(new CarAdapter());
-        driver.travel();
-
-    }
-
-}
-
-
-```
 
 
 #### Singleton Design Patterns (Creational )
@@ -430,74 +351,83 @@ public class SingletonSerialized implements Serializable{
 
 ```
 
-#### Template Pattern (Behavioral )
 
-Template Method are generally used in frameworks and lets subclasses redefine certain steps of an algorithm without changing the algorithm's structure.
+
+#### Adapter Pattern (Structural Design Patterns)
+
+ This pattern involves a single class which is responsible to join functionalities of independent or incompatible interfaces.
+ 
+ 
+ ```
+    JFrame f = new JFrame("Test");
+    f.addWindowListener(new WindowAdapter() {
+
+        @Override
+        public void windowClosing(WindowEvent e) {
+            System.out.println(e);
+        }
+    });
+```
+
 
 ```
-//******** MyConnection *********
-public abstract  class MyConnection {
-//we can use abstract or interface
-    abstract void Init();
-     abstract void Open();
-     abstract void Close();
-    //template method
-    public final  void executeSql(){
-        Init();
-        Open();
-        Close();
+
+//******** Journey  *********
+
+interface Journey {
+    void travel();
+}
+
+//******** Car  *********
+
+class Car { // Car class
+    public void drive() {
+        System.out.println("The car is  moving");
     }
 }
 
-//******** MyPostgre *********
-public class MyPostgre extends MyConnection {
-    Connection con = null;
-    @Override
-    void Init() {
-        try {
-           con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres",
-                    "postgres", "qaq123");
-            System.out.println("Connection is initialized !");
-        } catch (Exception ex) {
-            ex.printStackTrace();
-       }
+//******** Driver  *********
+
+class Driver {  // Driver  class with a constructor taking Journey class parameter 
+
+    private final Journey journey;
+
+    public Driver(Journey journey) {
+        this.journey=journey;
     }
 
-    @Override
-    void Open()  {
-        try {
-        Statement statement=con.createStatement();
-        ResultSet resultSet=statement.executeQuery("  select now();");
-        if(resultSet.next())
-            System.out.println(resultSet.getString(1));
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }
-    }
-
-    @Override
-    void Close() {
-        try{
-        if(con!=null){
-            con.close();
-            System.out.println("Connection is closed !");
-        }
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }
-
+    public void travel() {
+        journey.travel();
     }
 }
 
+//******** CarAdapter  *********
 
-//******** TemplatePattern  *********
+class  CarAdapter implements Journey {
 
-public class TemplatePattern {
-    public static void main(String[] args) {
-        MyConnection myConnection=new MyPostgre();
-        myConnection.executeSql();
-        myConnection.Open();//Exception
+    private final Car car;
+
+    public CarAdapter() {
+        car = new Car();
     }
+
+
+    @Override
+    public void travel() {
+        car.drive();
+    }
+}
+
+//******** AdapterPattern  *********
+
+public class AdapterPattern {
+
+    public static void main(String[] args) {      
+        Driver driver=new Driver(new CarAdapter());
+        driver.travel();
+
+    }
+
 }
 
 
@@ -594,6 +524,83 @@ public class DecoratorPatternTest {
 
 
 ```
+
+
+
+#### Template Pattern (Behavioral )
+
+Template Method are generally used in frameworks and lets subclasses redefine certain steps of an algorithm without changing the algorithm's structure.
+
+```
+//******** MyConnection *********
+public abstract  class MyConnection {
+//we can use abstract or interface
+    abstract void Init();
+     abstract void Open();
+     abstract void Close();
+    //template method
+    public final  void executeSql(){
+        Init();
+        Open();
+        Close();
+    }
+}
+
+//******** MyPostgre *********
+public class MyPostgre extends MyConnection {
+    Connection con = null;
+    @Override
+    void Init() {
+        try {
+           con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres",
+                    "postgres", "qaq123");
+            System.out.println("Connection is initialized !");
+        } catch (Exception ex) {
+            ex.printStackTrace();
+       }
+    }
+
+    @Override
+    void Open()  {
+        try {
+        Statement statement=con.createStatement();
+        ResultSet resultSet=statement.executeQuery("  select now();");
+        if(resultSet.next())
+            System.out.println(resultSet.getString(1));
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    @Override
+    void Close() {
+        try{
+        if(con!=null){
+            con.close();
+            System.out.println("Connection is closed !");
+        }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+
+    }
+}
+
+
+//******** TemplatePattern  *********
+
+public class TemplatePattern {
+    public static void main(String[] args) {
+        MyConnection myConnection=new MyPostgre();
+        myConnection.executeSql();
+        myConnection.Open();//Exception
+    }
+}
+
+
+```
+
+
 
 
 #### Command Pattern (Behavioral )
@@ -698,7 +705,7 @@ public class CommandPatternTest {
 
 
 
-#### Observer Pattern(Behavioral )
+#### Observer Pattern (Behavioral )
  It specifies communication between objects A one-to-many dependency between objects can be defined without making the objects tightly coupled
  Observer Pattern  can be used where you have several objects which are dependent on another object and are required to perform an action when the state of that object changes, or an object needs to notify others without knowing who they are or how many there are.
 
