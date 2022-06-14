@@ -680,6 +680,113 @@ public class CommandPatternTest {
 
 
 
+#### Observer PAttern
+ It specifies communication between objects A one-to-many dependency between objects can be defined without making the objects tightly coupled
+ Observer Pattern  can be used where you have several objects which are dependent on another object and are required to perform an action when the state of that object changes, or an object needs to notify others without knowing who they are or how many there are.
+
+```
+
+//******** Topic  *********
+public interface  Topic {
+    public void addUser(Visitor visitor);
+    public void removeUser(Visitor visitor);
+    public void notifyUsers(String tweet);
+}
+
+
+//******** Visitor  *********
+public interface Visitor {
+
+    public void notification(String nickname, String tweet);
+
+}
+
+
+
+
+//******** PublicAccount  *********
+
+
+public class PublicAccount implements Topic {
+    protected List<Visitor> visitors = new ArrayList<Visitor>();
+    protected String nickname;
+    public PublicAccount(String nickname) {
+        super();
+        this.nickname =nickname;
+    }
+
+    public void tweet(String tweet) {
+
+        System.out.printf("\nName: %s, Tweet: %s\n", nickname, tweet);
+        notifyUsers(tweet);
+    }
+
+    public String getNickname() {
+        return nickname;
+    }
+
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
+    }
+
+    @Override
+    public synchronized  void addUser(Visitor visitor) {
+        visitors.add(visitor);
+    }
+
+    @Override
+    public synchronized  void removeUser(Visitor visitor) {
+        visitors.remove(visitor);
+    }
+
+    @Override
+    public void notifyUsers(String tweet) {
+        visitors.forEach(visitor -> visitor.notification(nickname,tweet));
+    }
+}
+
+
+
+//******** Follower  *********
+
+public class Follower implements Visitor {
+    protected String userid;
+    public Follower(String userid) {
+        super();
+        this.userid=userid;
+
+    }
+    @Override
+    public void notification(String nickname, String tweet) {
+        System.out.printf("userid: '%s' has send  notification : '%s', Tweet: '%s'\n",userid, nickname, tweet);
+    }
+}
+
+
+
+//******** ObserverPatternTest  *********
+
+public class ObserverPatternTest {
+    public static void main(String args[]) {
+        PublicAccount amenhotep=new PublicAccount("Amenhotep");
+        PublicAccount tutankhamun=new PublicAccount("Tutankhamun");
+        Follower user1 = new Follower("1");
+        Follower user2 = new Follower("2");
+        amenhotep.addUser(user1);
+        tutankhamun.addUser(user2);
+        amenhotep.tweet("Power of words");
+        tutankhamun.tweet("Boy King");
+   }
+}
+
+
+
+
+
+```
+
+
+
 
 
 
