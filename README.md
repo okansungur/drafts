@@ -43,6 +43,7 @@ Builder design pattern helps to hide the complex logic in the builder It is used
  Builder pattern lets us construct  step-by-step of a complex object.
  We use builder to create immutable objects.In a multithread environment an immutable object can be shared between threads without explicit synchronization
  modifying it by two threads at the same time  is not possible. So instead of getters and setters we can use this pattern
+ * private constructor with a static builder class inside
 
 
 
