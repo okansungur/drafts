@@ -38,7 +38,7 @@ Builder design pattern helps to hide the complex logic in the builder It is used
 
 
 
-##### Builder Patterns  Sample
+#### Builder Patterns
  Builder pattern lets us construct  step-by-step of a complex object.
  We use builder to create immutable objects.In a multithread environment an immutable object can be shared between threads without explicit synchronization
  modifying it by two threads at the same time  is not possible. So instead of getters and setters we can use this pattern
@@ -150,7 +150,7 @@ class Car {
 
 ```
 
-##### Factory method (design pattern)
+#### Factory method (design pattern)
  It allows the consumer to create new objects without having to know the details of how they're created. Define an interface or an abstract class and let the subclasses decide which object to instantiate. The factory pattern decides on certain criteria ("SMS" or "MAIL") what object should be created, so it is easy to maintain this logic in one place, instead of searching it through the whole system.
   Factory Pattern is one of the way implementing Dependency Injection.We minimize code duplication and we create  more customizable code by using an interface
  ex:  java.sql.DriverManager#getConnection()
@@ -218,7 +218,7 @@ public class TestFactory {
 ```
 
 
-##### Adapter Pattern (Structural Design Patterns)
+#### Adapter Pattern (Structural Design Patterns)
 
  This pattern involves a single class which is responsible to join functionalities of independent or incompatible interfaces.
  
@@ -299,7 +299,7 @@ public class AdapterPattern {
 ```
 
 
-##### Singleton Design Patterns
+#### Singleton Design Patterns
 - Eager initialization : Does not provide any options for exception handling. Not suitable if class uses a lot of resources such as file handling or database operations
 - Static block initialization:  Not the best practice as the instance will already be created  even if we don't use it.
 - Lazy Initialization:
