@@ -39,7 +39,7 @@ Builder design pattern helps to hide the complex logic in the builder It is used
 
 
 
-#### Builder Patterns
+#### Builder Patterns (Creational)
  Builder pattern lets us construct  step-by-step of a complex object.
  We use builder to create immutable objects.In a multithread environment an immutable object can be shared between threads without explicit synchronization
  modifying it by two threads at the same time  is not possible. So instead of getters and setters we can use this pattern
@@ -151,7 +151,7 @@ class Car {
 
 ```
 
-#### Factory method (design pattern)
+#### Factory method (Creational)
  It allows the consumer to create new objects without having to know the details of how they're created. Define an interface or an abstract class and let the subclasses decide which object to instantiate. The factory pattern decides on certain criteria ("SMS" or "MAIL") what object should be created, so it is easy to maintain this logic in one place, instead of searching it through the whole system.
   Factory Pattern is one of the way implementing Dependency Injection.We minimize code duplication and we create  more customizable code by using an interface
  ex:  java.sql.DriverManager#getConnection()
@@ -300,7 +300,7 @@ public class AdapterPattern {
 ```
 
 
-#### Singleton Design Patterns
+#### Singleton Design Patterns (Creational )
 - Eager initialization : Does not provide any options for exception handling. Not suitable if class uses a lot of resources such as file handling or database operations
 - Static block initialization:  Not the best practice as the instance will already be created  even if we don't use it.
 - Lazy Initialization:
@@ -430,7 +430,7 @@ public class SingletonSerialized implements Serializable{
 
 ```
 
-#### Template Pattern
+#### Template Pattern (Behavioral )
 
 Template Method are generally used in frameworks and lets subclasses redefine certain steps of an algorithm without changing the algorithm's structure.
 
@@ -505,7 +505,7 @@ public class TemplatePattern {
 
 
 
-#### Decorator Pattern
+#### Decorator Pattern (Structural )
 
 
 You should use the Decorator Pattern to add new behaviors by placing them inside special wrapper objects,   at runtime
@@ -596,7 +596,7 @@ public class DecoratorPatternTest {
 ```
 
 
-#### Command Pattern
+#### Command Pattern (Behavioral )
 
 We can add new commands without changing existing code. Reduces coupling between the invoker and receiver of a command.But it will 
 increase  the number of classes for each individual command.
@@ -698,7 +698,7 @@ public class CommandPatternTest {
 
 
 
-#### Observer PAttern
+#### Observer Pattern(Behavioral )
  It specifies communication between objects A one-to-many dependency between objects can be defined without making the objects tightly coupled
  Observer Pattern  can be used where you have several objects which are dependent on another object and are required to perform an action when the state of that object changes, or an object needs to notify others without knowing who they are or how many there are.
 
