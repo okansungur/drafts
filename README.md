@@ -555,7 +555,7 @@ public class MyPostgre extends MyConnection {
     void Init() {
         try {
            con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres",
-                    "postgres", "qaq123");
+                    "postgres", "abc123");
             System.out.println("Connection is initialized !");
         } catch (Exception ex) {
             ex.printStackTrace();
