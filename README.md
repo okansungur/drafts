@@ -16,16 +16,16 @@ Builder design pattern helps to hide the complex logic in the builder It is used
 4. Flyweight Pattern
 5. Facade Pattern
 6. Bridge Pattern
-7. Decorator Pattern
+7. Decorator Pattern*
 
 
 #### Behavioral Design Patterns
 - Template Method Pattern(*)
 - Mediator Pattern
 - Chain of Responsibility Pattern
-- Observer Pattern
+- Observer Pattern*
 - Strategy Pattern
-- Command Pattern
+- Command Pattern*
 - State Pattern
 - Visitor Pattern
 - Interpreter Pattern
