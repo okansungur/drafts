@@ -26,7 +26,7 @@ Builder design pattern helps to hide the complex logic in the builder It is used
 - Mediator Pattern
 - Chain of Responsibility Pattern
 - Observer Pattern*
-- Strategy Pattern
+- Strategy Pattern*
 - Command Pattern*
 - State Pattern
 - Visitor Pattern
@@ -932,6 +932,63 @@ class BuilderFacetsStudent
     }
 }
 ```
+
+
+
+#### Strategy Pattern
+
+It enables selecting an algorithm at runtime.
+
+
+
+```
+
+//******** Calculate  *********
+public interface Calculate {
+    public int doOperation(int num1, int num2);
+}
+
+//******** Add  *********
+public class Add implements  Calculate {
+    @Override
+    public int doOperation(int num1, int num2) {
+        return num1+num2;
+    }
+}
+
+//******** Substract  *********
+public class Substract implements  Calculate {
+
+    @Override
+    public int doOperation(int num1, int num2) {
+        return num1-num2;
+    }
+}
+
+//******** Context  *********
+public class Context {
+    private  Calculate calculate;
+    public Context(Calculate calculate){
+        this.calculate=calculate;
+    }
+    public int executeCalculation(int num1, int num2){
+        return calculate.doOperation(num1, num2);
+    }
+}
+
+
+//******** StrategyTest  *********
+
+public class StrategyTest {
+    public static void main(String[] args) {
+       Context context= new  Context(new Add());
+        System.out.println(context.executeCalculation(2,2));
+        Context context2= new  Context(new Substract());
+    }
+}
+
+```
+
 
 
 
