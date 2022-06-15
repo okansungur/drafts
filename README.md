@@ -445,6 +445,7 @@ public class AdapterPattern {
 
 You should use the Decorator Pattern to add new behaviors by placing them inside special wrapper objects,   at runtime
 
+*pizza getPizza()*
 
 ```
 
@@ -537,6 +538,7 @@ public class DecoratorPatternTest {
 Template Method are generally used in frameworks and lets subclasses redefine certain steps of an algorithm without changing the algorithm's structure.
 abstract class or interface and a class inheriting and overriding like DPI
 
+*Template db open close*
 
 ```
 //******** MyConnection *********
