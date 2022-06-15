@@ -228,8 +228,8 @@ public class TestFactory {
 - Static block initialization:  Not the best practice as the instance will already be created  even if we don't use it.
 - Lazy Initialization:
 - Thread Safe Singleton
--
-For logging purposes or reading a conf file
+
+For logging purposes or reading a conf file single instance  with a global access point to that instance (ex:db)
 
 ```
 public final class LazySingleton {
