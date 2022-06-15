@@ -535,6 +535,8 @@ public class DecoratorPatternTest {
 #### Template Pattern (Behavioral )
 
 Template Method are generally used in frameworks and lets subclasses redefine certain steps of an algorithm without changing the algorithm's structure.
+abstract class or interface and a class inheriting and overriding like DPI
+
 
 ```
 //******** MyConnection *********
@@ -613,6 +615,7 @@ public class TemplatePattern {
 We can add new commands without changing existing code. Reduces coupling between the invoker and receiver of a command.But it will 
 increase  the number of classes for each individual command.
 
+*lights on off with command execute and a controller implementing command
 
 
 ```
