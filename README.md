@@ -1125,5 +1125,10 @@ public class Manager {
 
 ```
 
+##### CAP Theorem-  ACID - BASE 
 
+- CAP is Consistency, Availability, and Partition tolerance. Basically you can pick 2 of those but you can't do all 3.
 
+- ACID focuses on Atomicity, Consistency , Isolation, Durability
+
+- BASE focuses on Basically-Available , Soft-state , Eventually-consistent
