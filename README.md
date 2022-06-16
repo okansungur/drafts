@@ -990,7 +990,140 @@ public class StrategyTest {
 ```
 
 
+SOLID
+- The Single Responsibility Principle: A class should have one, and only one, reason to change
+- The Open Closed Principle: Software entities should be open to extension but closed to modification (Ex:strategy pattern)
+```
+/////*************CalculatorOperation****************
+public interface CalculatorOperation {
+    void perform();
+}
 
+/////*************Addition****************
+public class Addition implements CalculatorOperation {
+    private double num1, num2, result;
+    // constructor, getters and setters
+    public Addition(double num1, double num2) {
+        this.num1 = num1;
+        this.num2 = num2;
+    }
+    @Override
+    public void perform() {
+        result = num1 + num2;
+        System.out.println("Result is:" + result);
+    }
+}
+
+
+/////*************Calculator****************
+public class Calculator { 
+        public void calculate(CalculatorOperation operation) {
+            if (operation == null) {
+                throw new RuntimeException("Cannot perform operation");
+            }
+            operation.perform();
+        }
+        public static void main(String[] args) {
+
+            Calculator calculator=new Calculator();
+            calculator.calculate(new Addition(12,3));
+        }
+
+    }
+
+```
+Class is closed for modification but open for an extension.
+
+- The Liskov Substitution Principle: Derived classes must be substitutable for their base classes. ( class inheritance)
+ex: Penguin is a bird, but it can't fly, penguin class is a subtype of class Bird, but it shouldn't be able to use the fly method
+```
+//Bad example penguin can not fly
+public class Bird { 
+   public void fly(){}
+}
+```
+instead we should use 
+```
+public class Bird{}
+
+public class FlyingBirds extends Bird
+{
+    public void fly(){}
+}
+public class Duck extends FlyingBirds{}
+public class Penguin extends Bird{} 
+
+```
+
+- The Interface Segregation Principle: Clients should not be forced to depend upon interfaces that they do not use
+
+Bad 
+```
+public interface  developer{
+void writeCode();
+void writeUnitTests();
+void doAnalyze();
+void doTest();
+}
+
+public class softwaredeveloper implements developer{
+void doAnalyze(){
+  throw new UnsupportedOperationException("NA");
+}
+    @Override
+void doTest();
+throw new UnsupportedOperationException("NA");
+}
+}
+```
+Good
+```
+public interface  developer{
+void writeCode();
+void writeUnitTests();
+}
+
+public interface  Tester{
+void doTest();
+}
+```
+- The Dependency Inversion Principle: high level modules should not depend on low level modules; both should depend on abstractions.
+Important for decoupling the module, and any module that uses dependency inversion can be unit tested since its dependencies can be substituted for mocks
+
+
+```
+
+interface Worker {
+	public void work();
+}
+
+class Accounter implements Worker{
+	public void work() {
+		// ....working
+	}
+}
+
+class Teacher implements Worker{
+	public void work() {
+		// ....working
+	}
+}
+
+public class Manager {
+    Worker worker;
+    public Manager(Worker worker) {
+        this.worker=worker;
+    }
+    public void manage(){
+        worker.work();
+    }
+    public static void main(String[] args) {
+        Manager manager=new Manager(new Accounter());
+        manager.manage();
+    }
+}
+
+```
 
 
 
