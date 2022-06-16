@@ -991,8 +991,8 @@ public class StrategyTest {
 
 
 SOLID
-- The Single Responsibility Principle: A class should have one, and only one, reason to change
-- The Open Closed Principle: Software entities should be open to extension but closed to modification (Ex:strategy pattern)
+- __The Single Responsibility Principle__: A class should have one, and only one, reason to change
+- __The Open Closed Principle__: Software entities should be open to extension but closed to modification (Ex:strategy pattern)
 ```
 /////*************CalculatorOperation****************
 public interface CalculatorOperation {
@@ -1034,7 +1034,7 @@ public class Calculator {
 ```
 Class is closed for modification but open for an extension.
 
-- The Liskov Substitution Principle: Derived classes must be substitutable for their base classes. ( class inheritance)
+- __The Liskov Substitution Principle__: Derived classes must be substitutable for their base classes. ( class inheritance)
 ex: Penguin is a bird, but it can't fly, penguin class is a subtype of class Bird, but it shouldn't be able to use the fly method
 ```
 //Bad example penguin can not fly
@@ -1055,7 +1055,7 @@ public class Penguin extends Bird{}
 
 ```
 
-- The Interface Segregation Principle: Clients should not be forced to depend upon interfaces that they do not use
+- __The Interface Segregation Principle__: Clients should not be forced to depend upon interfaces that they do not use
 
 Bad 
 ```
@@ -1087,7 +1087,7 @@ public interface  Tester{
 void doTest();
 }
 ```
-- The Dependency Inversion Principle: high level modules should not depend on low level modules; both should depend on abstractions.
+- __The Dependency Inversion Principle__: high level modules should not depend on low level modules; both should depend on abstractions.
 Important for decoupling the module, and any module that uses dependency inversion can be unit tested since its dependencies can be substituted for mocks
 
 
