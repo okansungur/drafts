@@ -1127,8 +1127,29 @@ public class Manager {
 
 ##### CAP Theorem-  ACID - BASE 
 
+<p align="center">
+  <img  src="https://github.com/okansungur/drafts/blob/main/iot_images/CAP.png"><br/>
+  CAP
+</p>
+
+
 - CAP is Consistency, Availability, and Partition tolerance. Basically you can pick 2 of those but you can't do all 3.
 
+
+<p align="center">
+  <img  src="https://github.com/okansungur/drafts/blob/main/iot_images/acid.png"><br/>
+  ACID
+</p>
+
 - ACID focuses on Atomicity, Consistency , Isolation, Durability
+<p align="center">
+  <img  src="https://github.com/okansungur/drafts/blob/main/iot_images/Base.png"><br/>
+  BASE
+</p>
 
 - BASE focuses on Basically-Available , Soft-state , Eventually-consistent
+
+
+
+
+
