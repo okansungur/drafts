@@ -272,7 +272,9 @@ public class BillPughSingleton {
     }
 }
 ```
-__Reflection  destroys all Singleton Patterns __
+
+__Reflection,Serialization,Clonnable  destroys all Singleton Patterns__ 
+(Serialization => Object readResolve() method is applied, for Clonnable throw Clonnable exception)
 
 ```
 public class ReflectionSingleton{
