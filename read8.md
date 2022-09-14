@@ -35,7 +35,7 @@ __Repository__: directly correlates with an entity and represents an abstract pe
 
 ```
 Aggregate: Street, House, Resident
-Value: Doors
+Value: lamps
 Entity: Street, House 
 
 class Street{
@@ -43,9 +43,10 @@ class Street{
 }
 
 class House {
-  Number no
+  int nb
   Collection<Resident> residents
-  Collection<Door> doors
+  Collection <Lamp> lamps
+  
 }
 
 class Resident{
