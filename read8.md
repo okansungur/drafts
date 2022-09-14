@@ -15,4 +15,16 @@ Anemic Model: it is a domain model where domain objects contain little or no bus
 3-Generic subdomain: User identity management is a good example
 
 
-Domain events should be inside a domain.
+Domain events should be inside a domain.(publisher-subscriber)
+domain services can publish domain events and can interact with other domain services
+
+DDD has 2 phases Strategic phase and Tactical Phase.During strategic phase domain experts business analysts and developers gather  to brainstorm to identify business requirements and sharing knowledge..We call this an EventStorming session.Strategic domain design helps defining bounded contexts and defining microservices.
+Bounded contexts communicate with
+
+Open Host Service:
+
+Published Language: 
+
+Anticorruption Layer:
+
+Separate ways: 
