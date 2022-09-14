@@ -2,6 +2,9 @@
 
 Domain Driven Design is about seeing the big picture.Simpler communication, and more flexibility.DDD aproach is object oriented.
 
+
+Even there are failures like National Programme for Information Technology (NPfIT-2002). A large -scale project to modernize the system of health. The NPfIT was officially dismantled in September 2011. It cost the British government more than £10 billion. The failure is because of Project Planning,user needs,organizational culture  and Stakeholder Engagement.
+
 __Ubiqutious language__: A common language created with domain experts business analyst product owner and developers. Removes confusion misunderstanding among team.
 
 But it may be difficult to apply as the organizational structure is different. It plays a vital role in DDD's sucess
