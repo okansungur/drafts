@@ -27,7 +27,7 @@ __Shared Kernel__: The intersection can be an Autherization sample for this type
 
 
 
-__Published Language__: 
+__Published Language__: API, JSON, XML, Protocol Buffer ...
 
 __Conformist__ : Upstream teams model is accepted and conformed. It is not important whether the upstream contract is industry standart or not.Only it should meet the downstream needs.
 
