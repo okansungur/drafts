@@ -119,7 +119,7 @@ Even there are failures like National Programme for Information Technology (NPfI
 
 
 
-___DDD Lite___:   Application layer is not involved.
+___DDD Lite___:    Simplifies the DDD design model.Picking and choosing a subset of the DDD tactical patterns. No BC,UL. Team is in the position of Domain Expert maybe.
 
 - Interface
 - Service
