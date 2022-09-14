@@ -4,6 +4,8 @@ Domain Driven Design is about seeing the big picture.Simpler communication, and 
 
 __Ubiqutious language__: A common language created with domain experts business analyst product owner and developers. Removes confusion misunderstanding among team.
 
+But it may be difficult to apply as the organizational structure is different. It is very important
+
 __Layers of DDD__ are :
 - User Interface(Presentation Layer) : External actor is human or non-human In DDD domain is more important then UI/UX
 
