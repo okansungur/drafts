@@ -18,6 +18,29 @@ __Aggregate__:An agregate is a business functionality that encapsulates the busi
 __Values__: Immutable objects like color,currency, coordinates.
 
 
+```
+Aggregate: Street, House, Resident
+Value: Doors
+Entity: Street, House 
+
+class Street{
+  Collection<House> houses
+}
+
+class House {
+  Number no
+  Collection<Resident> residents
+  Collection<Door> doors
+}
+
+class Resident{
+   String familyName
+
+}
+
+```
+
+
 __Context Map__ : It is a visual representation of relationships between different contexts of the system
 
 __Domain Events__ :Domain events should be inside a domain.(publisher-subscriber)PipelinR. Used to notify other services when something happens. User logged in, opened a ticket, made a payment. etc.
