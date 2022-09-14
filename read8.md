@@ -7,6 +7,12 @@ __Aggregate__:
 __Values__:
 
 
+__Strategic Phase__: Identify bounded contexts and map them out in context map. Event Storming with Domainexperts business analyst product owner and developers.
+
+__Tactical Phase__: Model bounded contexts according to business rules of the subdomain
+
+
+
 
 
 UI and UX Design:We use wireframing. Entire  interaction with the product is important.We look at overall.(SmartDraw, Mind Manager)
@@ -26,7 +32,7 @@ An agregate is a business functionality that encapsulates the business rules and
 
 
 
-Domain events should be inside a domain.(publisher-subscriber)
+Domain events should be inside a domain.(publisher-subscriber)PipelinR
 
 Domain services can publish domain events and can interact with other domain services.
 
