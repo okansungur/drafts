@@ -14,10 +14,19 @@ __Layers of DDD__ are :
 
 __Bounded Context__ : A logical boundary of a domain where particular terms and rules apply consistently.Should be owned by 1 team only.
 
-__Aggregate__:An agregate is a business functionality that encapsulates the business rules and it is not divisible any more.Create relationship between entity and value objects
+__Aggregate__:An agregate is a business functionality that encapsulates the business rules and it is not divisible any more.Create relationship between entity and value objects. Basic elemnt of transfer of data storage. A collection of entities or value objects that are related to each other through a root object.Mutable.
 
-__Values__: Immutable objects like color,currency, coordinates.
+An aggregate is a collection on entity and value objects that are only accessed through an aggregate root. 
 
+__Aggregate Root__: An aggregate root is an entity through which the outside world and interacts with an aggregate.AR is an entity with a global id. Other entities within an aggregate have a local id (unique onlywithin the aggregate) Order is AR but orderline is an aggregate
+
+
+__Values__: Immutable objects like color,currency, coordinates. A data thay may have sub values.Has no lifecycle and identity
+
+__Entity__ : Objects with identity.A unique object within the domain and it is important for the domain. Mutable has lifecycle.
+
+
+__Repository__: directly correlates with an entity and represents an abstract persistent storage
 
 ```
 Aggregate: Street, House, Resident
@@ -52,7 +61,7 @@ DDD has 2 phases Strategic phase and Tactical Phase.During strategic phase domai
 
 __Strategic Phase__: Identify bounded contexts and map them out in context map. Event Storming with domain experts business analyst product owner and developers.
 
-__Tactical Phase__: Model bounded contexts according to business rules of the subdomain
+__Tactical Phase__: Model bounded contexts according to business rules of the subdomain.Relies on programming language.
 
 Teams may chose TDD or BDD or can use both of them.
 
@@ -82,7 +91,7 @@ __Published Language__: API, JSON, XML, Protocol Buffer ...
 
 __Conformist__ : Upstream teams model is accepted and conformed. It is not important whether the upstream contract is industry standart or not.Only it should meet the downstream needs.
 
-__Anticorruption Layer__: Not willing to conform instead  an ACL is used . Especially when upstream contract changes often consumer is isolated and the model is not effected by changes. (Mitigate changes)
+__Anticorruption Layer__: Not willing to conform instead  an ACL is used . Especially when upstream contract changes often consumer is isolated and the model is not effected by changes. (Mitigate changes).Prevents the intrusion of foreignconcepts and models like gatekeeper.
 
 __Open Host Service__: It is revearsal of ACL producer/supplier has the freedom.Uses published languages for downstream.
 
