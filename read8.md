@@ -29,7 +29,7 @@ __Entity__ : Objects with identity.A unique object within the domain and it is i
 
 When building an invoice system adress is a value object but when building city electric lines adress is an entity.
 
-__Repository__: directly correlates with an entity and represents an abstract persistent storage
+__Repository__: directly correlates with an entity and represents an abstract persistent storage.(db,orm)
 
 ```
 Aggregate: Street, House, Resident
