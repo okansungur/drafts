@@ -96,7 +96,7 @@ __Published Language__: API, JSON, XML, Protocol Buffer ...
 
 __Conformist__ : Upstream teams model is accepted and conformed. It is not important whether the upstream contract is industry standart or not.Only it should meet the downstream needs.
 
-__Anticorruption Layer__: Not willing to conform instead  an ACL is used . Especially when upstream contract changes often consumer is isolated and the model is not effected by changes. (Mitigate changes).Prevents the intrusion of foreignconcepts and models like gatekeeper.
+__Anticorruption Layer__: Not willing to conform instead  an ACL is used . Especially when upstream contract changes often consumer is isolated and the model is not effected by changes. (Mitigate changes).Prevents the intrusion of foreignconcepts and models like gatekeeper.(Adapter or Facede pattern)
 
 __Open Host Service__: It is revearsal of ACL producer/supplier has the freedom.Uses published languages for downstream.
 
