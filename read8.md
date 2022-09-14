@@ -3,7 +3,8 @@
 __Ubiqutious language__: A common language created with domain experts business analyst product owner and developers. Removes confusion misunderstanding among team.
 
 __Layers of DDD__ are :
-- User Interface(Presentation Layer) : External actor is human or non-human
+- User Interface(Presentation Layer) : External actor is human or non-human In DDD domain is more important then UI/UX
+
   - UX Design: We use wireframing. Entire  interaction with the product is important.We look at overall.(SmartDraw, Mind Manager)
   - UI Design: Button, icon, typhography, color. Shortly Bones represent the code.Organs are UX design and Cosmetics senses and reactions are UI design
 
