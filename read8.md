@@ -25,6 +25,7 @@ __Values__: Immutable objects like color,currency, coordinates. A data thay may 
 
 __Entity__ : Objects with identity.A unique object within the domain and it is important for the domain. Mutable has lifecycle.
 
+When building an invoice system adress is a value object but when building city electric lines adress is an entity.
 
 __Repository__: directly correlates with an entity and represents an abstract persistent storage
 
