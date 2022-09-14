@@ -1,5 +1,7 @@
 ### Domain Driven Design
 
+Domain Driven Design is about seeing the big picture.Simpler communication, and more flexibility.DDD aproach is object oriented.
+
 __Ubiqutious language__: A common language created with domain experts business analyst product owner and developers. Removes confusion misunderstanding among team.
 
 __Layers of DDD__ are :
@@ -14,7 +16,7 @@ __Layers of DDD__ are :
 
 __Bounded Context__ : A logical boundary of a domain where particular terms and rules apply consistently.Should be owned by 1 team only.
 
-__Aggregate__:An agregate is a business functionality that encapsulates the business rules and it is not divisible any more.Create relationship between entity and value objects. Basic elemnt of transfer of data storage. A collection of entities or value objects that are related to each other through a root object.Mutable.
+__Aggregate__:An agregate is a business functionality that encapsulates the business rules and it is not divisible any more.Create relationship between entity and value objects. Basic elemnt of transfer of data storage. A collection of entities or value objects that are related to each other through a root object.Mutable nad enforces consistency
 
 An aggregate is a collection on entity and value objects that are only accessed through an aggregate root. 
 
