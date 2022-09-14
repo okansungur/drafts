@@ -1,5 +1,12 @@
 ### Domain Driven Design
 
+__Ubiqutious language__:
+
+
+__Aggregate__:
+__Values__:
+
+
 
 
 UI and UX Design:We use wireframing. Entire  interaction with the product is important.We look at overall.(SmartDraw, Mind Manager)
@@ -20,6 +27,7 @@ An agregate is a business functionality that encapsulates the business rules and
 
 
 Domain events should be inside a domain.(publisher-subscriber)
+
 Domain services can publish domain events and can interact with other domain services.
 
 DDD has 2 phases Strategic phase and Tactical Phase.During strategic phase domain experts business analysts and developers gather  to brainstorm to identify business requirements and sharing knowledge..We call this an EventStorming session.Strategic domain design helps defining bounded contexts and defining microservices.
