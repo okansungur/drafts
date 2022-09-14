@@ -1,13 +1,20 @@
 ### Domain Driven Design
 
-__Ubiqutious language__:
+__Ubiqutious language__: A common language created with domain experts business analyst product owner and developers. Removes confusion misunderstanding among team.
+
+Layers of DDD are 
+- User Interface(Presentation Layer) : External actor is human or non-human
+- Application Layer: No business rule or knowledge coordinates tasks and delegates them
+- Domain Layer: Brain of the system.Business rules are here.
+- Infrastructure Layer: Send message notifications, supports interaction with other layers.
+
 
 
 __Aggregate__:
 __Values__:
 
 
-__Strategic Phase__: Identify bounded contexts and map them out in context map. Event Storming with Domainexperts business analyst product owner and developers.
+__Strategic Phase__: Identify bounded contexts and map them out in context map. Event Storming with domain experts business analyst product owner and developers.
 
 __Tactical Phase__: Model bounded contexts according to business rules of the subdomain
 
