@@ -4,13 +4,16 @@ __Ubiqutious language__: A common language created with domain experts business 
 
 Layers of DDD are 
 - User Interface(Presentation Layer) : External actor is human or non-human
+  - UX Design: We use wireframing. Entire  interaction with the product is important.We look at overall.(SmartDraw, Mind Manager)
+  - UI Design: Button, icon, typhography, color. Shortly Bones represent the code.Organs are UX design and Cosmetics senses and reactions are UI design
+
 - Application Layer: No business rule or knowledge coordinates tasks and delegates them
 - Domain Layer: Brain of the system.Business rules are here.
 - Infrastructure Layer: Send message notifications, supports interaction with other layers.
 
 
 
-__Aggregate__:
+__Aggregate__:An agregate is a business functionality that encapsulates the business rules and it is not divisible any more.
 __Values__:
 
 
@@ -18,19 +21,19 @@ __Strategic Phase__: Identify bounded contexts and map them out in context map. 
 
 __Tactical Phase__: Model bounded contexts according to business rules of the subdomain
 
-
-
-
-
-UI and UX Design:We use wireframing. Entire  interaction with the product is important.We look at overall.(SmartDraw, Mind Manager)
-UI=> Button, icon, typhography, color. Shortly Bones represent the code.Organs are UX design and Cosmetics senses and reactions are UI design
+Teams may chose TDD or BDD or can use both of them.
 
 TDD: Is a methodology focuses on iterative development lifecycle. Add a test (Red) new test fails.Write enough code to pass the test(Green). Run test and refactor. So that in the end you save time.
 
 BDD: (Cucumber) Gherkin Language is used. (Given When Then) BDD is concerned about result of higher level scenarios. TDD is focused on testing smaller pieces of functionality in isolation.TDD you should have the knowledge of programming language whereas in BDD you dont have to.
 
 
-An agregate is a business functionality that encapsulates the business rules and it is not divisible any more.
+
+
+
+
+
+
 
 
 
