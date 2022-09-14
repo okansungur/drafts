@@ -13,8 +13,14 @@ Layers of DDD are
 
 
 
-__Aggregate__:An agregate is a business functionality that encapsulates the business rules and it is not divisible any more.
-__Values__:
+__Aggregate__:An agregate is a business functionality that encapsulates the business rules and it is not divisible any more.Create relationship between entity and value objects
+
+__Values__: Immutable objects like color,currency, coordinates.
+
+
+__Domain Events__ :Domain events should be inside a domain.(publisher-subscriber)PipelinR. Used to notify other services when something happens. User logged in, opened a ticket, made a payment. etc.
+__Domain Services__ : Stateless services implements a piece of business logic.
+
 
 
 __Strategic Phase__: Identify bounded contexts and map them out in context map. Event Storming with domain experts business analyst product owner and developers.
@@ -42,7 +48,7 @@ BDD: (Cucumber) Gherkin Language is used. (Given When Then) BDD is concerned abo
 
 
 
-Domain events should be inside a domain.(publisher-subscriber)PipelinR
+
 
 Domain services can publish domain events and can interact with other domain services.
 
