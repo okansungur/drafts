@@ -2,9 +2,15 @@
 
 
 
+UI and UX Design:We use wireframing. Entire  interaction with the product is important.We look at overall.(SmartDraw, Mind Manager)
+UI=> Button, icon, typhography, color. Shortly Bones represent the code.Organs are UX design and Cosmetics senses and reactions are UI design
+
+TDD: Is a methodology focuses on iterative development lifecycle. Add a test (Red) new test fails.Write enough code to pass the test(Green). Run test and refactor. So that in the end you save time.
+
+BDD: (Cucumber) Gherkin Language is used. Given When Then
 
 
-An aagregate is a business functionality that encapsulates the business rules and it is not divisible any more.
+An agregate is a business functionality that encapsulates the business rules and it is not divisible any more.
 
 
 
