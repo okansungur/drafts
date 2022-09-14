@@ -1,9 +1,6 @@
 ### Domain Driven Design
 
-Domain Driven Design is about seeing the big picture.Simpler communication, and more flexibility.DDD aproach is object oriented.
-
-
-
+Domain Driven Design is about seeing the big picture.Simpler communication, and more flexibility.DDD aproach is object oriented. DDD can be used  large software development and also small projects.
 
 __Ubiqutious language__: A common language created with domain experts business analyst product owner and developers. Removes confusion misunderstanding among team.
 
@@ -117,7 +114,7 @@ Domain Driven Deesign and microservice based architecture is connected but there
 
 __Anemic Model__: it is a domain model where domain objects contain little or no business logic.We use private setters and entities must be self validated.We should also avoid constructors without parameters..In fact ORM tools create domain objects automatically which leads anemic model.So keeping OOP is a good way of avoiding anemic model.
 
-
+Unsucessful DDD  project:
 Even there are failures like National Programme for Information Technology (NPfIT-2002). A large -scale project to modernize the system of health. The NPfIT was officially dismantled in September 2011. It cost the British government more than £10 billion. The failure is because of Project Planning,user needs,organizational culture  and Stakeholder Engagement.
 
 
