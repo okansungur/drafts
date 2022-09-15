@@ -3,7 +3,19 @@
 In monolithic architecture, applications are built as one large system, whereas in micro-service architecture we divide the application into modular components which are
 independent of each other
 
+
+<p align="center">
+  <img  src="https://github.com/okansungur/drafts/blob/main/iot_images/service.png"><br/>
+  Service
+</p>
+
 Service is defined by its public interface.Microservice is a service with a micro public interface.
+
+
+
+
+
+
 
 #### Monolithic architecture advantages:
 - Development is quite simple 
