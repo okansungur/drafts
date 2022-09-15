@@ -65,6 +65,11 @@ class Resident{
 
 __Context Map__ : It is a visual representation of relationships between different contexts of the system
 
+<p align="center">
+  <img  src="https://github.com/okansungur/drafts/blob/main/iot_images/ContextMap.png"><br/>
+  Context Map
+</p>
+
 __Domain Events__ :Domain events should be inside a domain.(publisher-subscriber)PipelinR. Used to notify other services when something happens. User logged in, opened a ticket, made a payment. etc.
 __Domain Services__ : Stateless services implements a piece of business logic. Domain services can publish domain events and can interact with other domain services.
 
