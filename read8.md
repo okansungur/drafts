@@ -2,6 +2,12 @@
 
 Domain Driven Design is about seeing the big picture.Simpler communication, and more flexibility.DDD aproach is object oriented. DDD can be used  large software development and also small projects.
 
+
+
+
+
+
+
 __Ubiqutious language__: A common language created with domain experts business analyst product owner and developers. Removes confusion misunderstanding among team.
 
 But it may be difficult to apply as the organizational structure is different. It plays a vital role in DDD's sucess
@@ -109,6 +115,12 @@ __Separate ways__: Collobrating or duplication. (Ex:logs) Cost is important
 Both ACL and OHS reduces system complexity.
 Domain Driven Deesign and microservice based architecture is connected but there is a difference between microservice and bounded context. All microservices are bounded contexts but not all bounded contexts are microservices.As the bounded contexts represent the widest valid boundaries.Defining bounderies wider then their bounded context or boundaries that are smaller then microservices will not be a good idea.as we increase the complexity of system.
 
+
+
+<p align="center">
+  <img  src="https://github.com/okansungur/drafts/blob/main/iot_images/producerConsumer.png"><br/>
+  Upstream - Downstream
+</p>
 
 
 
