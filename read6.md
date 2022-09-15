@@ -3,6 +3,8 @@
 In monolithic architecture, applications are built as one large system, whereas in micro-service architecture we divide the application into modular components which are
 independent of each other
 
+Service is defined by its public interface.Microservice is a service with a micro public interface.
+
 #### Monolithic architecture advantages:
 - Development is quite simple 
 - Testing a monolith is also simple, just start the application and do the end-to-end testing, Selenium can be used to do the automation testing
