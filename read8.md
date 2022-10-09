@@ -3,7 +3,7 @@
 Domain Driven Design is about seeing the big picture.Simpler communication, and more flexibility.DDD aproach is object oriented. DDD can be used  large software development and also small projects.
 
 
-
+Neither starting with the development of the UI, nor the persistence layer like the database design. Domain-driven development is based on domain. So having a domain model developed first should be the way.
 
 
 
