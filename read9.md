@@ -18,4 +18,4 @@ ssh hardening can not connect as root  or no password authentication only with p
 Container Sandboxing
 gVisor by google is a proxy between linux-kernel  and each of the containers and the aim is isolation for security
 Kata Containers: Each container has its own kernel and are lightweight but more resource and less performance . Cloud providers are already virtual machines. We use 
-Vm inside vm nested virtualization.google cloud has support
+Vm inside vm nested virtualization.google cloud has support.Open Policy Agent is about only authorization . We use a policy language rego that is esay to read and write
