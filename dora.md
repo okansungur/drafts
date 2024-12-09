@@ -1,3 +1,4 @@
+##### Dora Metrics (DevOps Research and Assessment)
 ##### Tarihçe:
 DORA grubu başlangıçta bağımsız bir araştırma kuruluşuydu. Ancak 2018'de Google Cloud, DORA'yı ve aralarında Nicole Forsgren, Gene Kim ve Jez Humble liderliğindeki ekibin de bulunduğu araştırma 
 varlıklarını satın aldı. 
