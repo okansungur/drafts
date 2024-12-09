@@ -67,6 +67,12 @@ Yüksek, Orta  ve düşük  16-30%
 6-Sleuth ($30 per month)
 
 
+<p align="center">
+  <img  src="https://github.com/okansungur/drafts/blob/main/iot_images/ApacheDevlake_Dora.png"><br/>
+  Apache Devlake Dora Metrics
+</p>
+
+
 Burada  önemli olan kurumların kendi CI/CD tarafları ile  uyumlu çalışabilecek maliyeti  düşük  bir çözüm bulmalarıdır. DORA Metrikleri bireysel performansı değil kurumun performansının ölçmekle ilgilidir. Bu  süreçteki darboğazları ve iyileştirmeleri belirlemekle ilgilidir.
 
 DORA metriklerini ölçmek için en iyi araç, organizasyonunuzun mevcut yazılım geliştirme süreçlerine ve ihtiyaçlarına bağlıdır. Eğer düşük maliyetli ve basit bir çözüm arıyorsanız, GitHub Actions veya GitLab CI/CD gibi ücretsiz CI/CD araçları, temel DORA metriklerini izlemek için iyi bir başlangıçtır. Hatalar ve arıza süreleri için Sentry veya Prometheus gibi açık kaynak araçları da uygun maliyetli çözümler sunar.
